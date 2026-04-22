@@ -17,7 +17,7 @@ const readHistory = (userId) => {
 
     const parsedValue = JSON.parse(storedValue);
     return Array.isArray(parsedValue) ? parsedValue : [];
-  } catch (error) {
+  } catch {
     return [];
   }
 };
@@ -43,7 +43,7 @@ const readDonationHistory = (userId) => {
 
     const parsedValue = JSON.parse(storedValue);
     return Array.isArray(parsedValue) ? parsedValue : [];
-  } catch (error) {
+  } catch {
     return [];
   }
 };
@@ -61,6 +61,24 @@ export const getOrderHistory = (userId) => readHistory(userId);
 export const appendOrderHistory = (userId, order) => {
   const currentHistory = readHistory(userId);
   writeHistory(userId, [order, ...currentHistory]);
+};
+
+export const updateOrderHistoryEntry = (userId, orderId, updates) => {
+  if (!userId || !orderId) {
+    return;
+  }
+
+  const currentHistory = readHistory(userId);
+  const nextHistory = currentHistory.map((entry) =>
+    entry.orderId === orderId
+      ? {
+          ...entry,
+          ...updates,
+        }
+      : entry
+  );
+
+  writeHistory(userId, nextHistory);
 };
 
 export const getDonationHistory = (userId) => readDonationHistory(userId);

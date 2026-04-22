@@ -43,6 +43,7 @@ const renderDescription = (description) => {
     return null;
   }
 
+  const bulletPrefixes = ["-"];
   const lines = String(description)
     .split("\n")
     .map((line) => line.trim())
@@ -58,16 +59,20 @@ const renderDescription = (description) => {
 
     content.push(
       <ul key={`bullets-${content.length}`} className="item-detail-bullet-list">
-        {bullets.map((line, index) => (
-          <li key={`${line}-${index}`}>{line.replace(/^(â€¢|Ã¢â‚¬Â¢)\s*/, "")}</li>
-        ))}
+        {bullets.map((line, index) => {
+          const cleanedLine = bulletPrefixes.reduce((value, prefix) => {
+            return value.startsWith(prefix) ? value.slice(prefix.length).trim() : value;
+          }, line);
+
+          return <li key={`${line}-${index}`}>{cleanedLine}</li>;
+        })}
       </ul>
     );
     bullets = [];
   };
 
   lines.forEach((line) => {
-    if (line.startsWith("â€¢") || line.startsWith("Ã¢â‚¬Â¢")) {
+    if (bulletPrefixes.some((prefix) => line.startsWith(prefix))) {
       bullets.push(line);
       return;
     }

@@ -71,16 +71,7 @@ const ContactPage = ({ id }) => {
             <FaWhatsapp size={28} />
             {t("contact.whatsapp", "Chat on WhatsApp")}
           </a>
-                    <br />
-
-          <a
-            href="https://wa.me/919911921125"
-            target="_blank"
-            rel="noreferrer"
-            className="fixed bottom-5 right-5 w-20 h-20 bg-green-500 text-white flex items-center justify-center rounded-full shadow-lg hover:bg-green-600 transition z-50"
-          >
-            <FaWhatsapp size={58} />
-          </a>
+          <br />
 
           <h1 className="font-bold text-2xl text-red-900 underline">{t("contact.location", "Location :")}</h1>
           <iframe

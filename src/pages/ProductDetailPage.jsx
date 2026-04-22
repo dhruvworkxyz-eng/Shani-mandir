@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import TopBar from "../components/TopBar";
@@ -10,10 +10,11 @@ import AuthModal from "../components/AuthModal";
 import ItemDetailsContent from "../components/ItemDetailsContent";
 import RelatedProductsSlider from "../components/RelatedProductsSlider";
 import { useLanguage } from "../context/LanguageContext";
-import products from "../data/products";
+import { useProductCatalog } from "../context/ProductCatalogContext";
 
 const ProductDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
   const { t } = useLanguage();
+  const { products } = useProductCatalog();
   const { productId } = useParams();
   const navigate = useNavigate();
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -23,7 +24,7 @@ const ProductDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) 
 
   const product = useMemo(
     () => products.find((entry) => String(entry.id) === String(productId)),
-    [productId]
+    [productId, products]
   );
 
   const openOrderFlow = (item) => {

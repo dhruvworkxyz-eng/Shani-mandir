@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import logo from "../images/navd.png";
@@ -7,7 +7,8 @@ import { FaChevronDown, FaMagnifyingGlass, FaRightFromBracket, FaUser } from "re
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useLanguage } from "../context/LanguageContext";
-import products from "../data/products";
+import { useProductCatalog } from "../context/ProductCatalogContext";
+import { isAdminUser } from "../lib/adminAccess";
 import pujas from "../data/pujas";
 
 const shopCategories = [
@@ -34,7 +35,9 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
   const searchShellRefs = useRef([]);
   const navigate = useNavigate();
   const { user, loading, logout } = useAuth();
+  const { products } = useProductCatalog();
   const { t, toggleLanguage, translateCategory } = useLanguage();
+  const showAdminAccess = isAdminUser(user);
 
   const profileLabel = useMemo(() => {
     if (!user) {
@@ -97,7 +100,7 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
       }));
 
     return [...productMatches, ...pujaMatches].slice(0, 8);
-  }, [searchQuery, t, translateCategory]);
+  }, [products, searchQuery, t, translateCategory]);
 
   const suggestedProducts = useMemo(
     () =>
@@ -114,7 +117,7 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
             : t("nav.templeProduct", "Temple Product"),
           path: `/products/${product.id}`,
         })),
-    [t, translateCategory]
+    [products, t, translateCategory]
   );
 
   useEffect(() => {
@@ -177,6 +180,12 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
     setProfileMenuOpen(false);
     setOpen(false);
     navigate("/account");
+  };
+
+  const openAdminPage = () => {
+    setProfileMenuOpen(false);
+    setOpen(false);
+    navigate("/admin");
   };
 
   const openAccountSection = (hash) => {
@@ -348,6 +357,12 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
                       <FaUser />
                       {t("nav.myAccount", "My Account")}
                     </button>
+                    {showAdminAccess ? (
+                      <button type="button" className="header-profile-menu-item header-profile-menu-item-secondary" onClick={openAdminPage}>
+                        <FaUser />
+                        Admin Dashboard
+                      </button>
+                    ) : null}
                     <button type="button" className="header-profile-menu-item header-profile-menu-item-secondary" onClick={() => openAccountSection("#track-order")}>
                       <FaUser />
                       {t("account.trackOrderTitle", "Track Order")}
@@ -504,6 +519,12 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
                   <FaUser />
                   {t("nav.myAccount", "My Account")}
                 </button>
+                {showAdminAccess ? (
+                  <button type="button" className="mobile-account-btn" onClick={openAdminPage}>
+                    <FaUser />
+                    Admin Dashboard
+                  </button>
+                ) : null}
                 <button type="button" className="mobile-account-btn" onClick={() => openAccountSection("#track-order")}>
                   <FaUser />
                   {t("account.trackOrderTitle", "Track Order")}

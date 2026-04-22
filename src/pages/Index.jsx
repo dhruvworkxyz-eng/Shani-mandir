@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import HistoryPage from './HistoryPage'
 import ContactPage from './ContactPage'
@@ -12,9 +12,10 @@ import AuthModal from "../components/AuthModal";
 import DonationModal from "../components/DonationModal";
 import CartModal from "../components/CartModal";
 import ItemDetailsModal from "../components/ItemDetailsModal";
-import products from "../data/products";
+import { useProductCatalog } from "../context/ProductCatalogContext";
 
 const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
+  const { products } = useProductCatalog();
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [donationModalOpen, setDonationModalOpen] = useState(false);
   const [cartModalOpen, setCartModalOpen] = useState(false);

@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import ProductCard from "../components/ProductCard";
-import products, { productCategories } from "../data/products";
 import { useLanguage } from "../context/LanguageContext";
+import { useProductCatalog } from "../context/ProductCatalogContext";
 
 const HistoryPage = ({ id, activeCategory: controlledCategory, onCategoryChange, onViewProduct }) => {
   const { t, translateCategory } = useLanguage();
+  const { products, productCategories } = useProductCatalog();
   const [internalCategory, setInternalCategory] = useState("All");
   const activeCategory = controlledCategory ?? internalCategory;
   const setActiveCategory = onCategoryChange ?? setInternalCategory;
@@ -21,7 +22,7 @@ const HistoryPage = ({ id, activeCategory: controlledCategory, onCategoryChange,
           products.filter((product) => product.category === category).slice(0, 2)
         );
     },
-    [activeCategory]
+    [activeCategory, productCategories, products]
   );
 
   return (

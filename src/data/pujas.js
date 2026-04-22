@@ -43,19 +43,9 @@ const pujas = [
     price: 250000,
     image: shriKrishna,
     badge: "Festival Special",
-    description: `Bhagwat Katha Puja Online is a sacred Vedic service that includes the complete recitation of the Shrimad Bhagwat Mahapuran, dedicated to Lord Vishnu and Lord Krishna.
+    description: `Bhagwat Katha Puja Online is a sacred Vedic service that includes the complete recitation of the Shrimad Bhagwat Mahapuran, dedicated to Lord Vishnu and Lord Krishna. This divine katha explains spiritual wisdom, devotion (Bhakti), dharma, and the path to inner peace and moksha.
 
-This divine katha explains spiritual wisdom, devotion (Bhakti), dharma, and the path to inner peace and moksha.
-
-By booking Bhagwat Katha Puja Online, devotees can easily perform this auspicious ritual without visiting the temple. Experienced Vedic Pandits conduct the katha with proper vidhi, mantra chanting, and Sankalp taken in the devotee's name and family.
-
-Benefits of Bhagwat Katha Puja:
-• Brings peace, positivity, and spiritual growth
-• Removes negative energy and karmic obstacles
-• Strengthens devotion to Lord Krishna
-• Improves family harmony and happiness
-• Highly beneficial for ancestral peace and moksha
-• Ideal for griha pravesh, birthdays, and spiritual occasions`,
+By booking Bhagwat Katha Puja Online, devotees can easily perform this auspicious ritual without visiting the temple. Experienced Vedic Pandits conduct the katha with proper vidhi, mantra chanting, and Sankalp taken in the devotee's name and family.`,
   },
   {
     id: 2,
@@ -67,34 +57,39 @@ Benefits of Bhagwat Katha Puja:
     price: 1500,
     image: maaDurga,
     badge: "Limited Slots",
-    description: `Durga Saptashati Path is a powerful recitation of 700 verses dedicated to Goddess Durga, performed to seek protection, strength, victory over obstacles, and divine blessings.
+    description: `Durga Saptashati Path is a powerful recitation of 700 verses dedicated to Goddess Durga, performed to seek protection, strength, victory over obstacles, and divine blessings. This sacred path helps remove negativity and brings peace, prosperity, and spiritual energy. Book online and participate from anywhere.
 
-This sacred path helps remove negativity and brings peace, prosperity, and spiritual energy. Book online and participate from anywhere.
+Samagri (Puja Items) with Offerings
 
-Samagri (Puja Items) with Offerings:
-• Durga Saptashati book
-• Goddess Durga idol or picture
-• Clean water
-• Diya (oil lamp) with ghee or oil
-• Incense sticks (Agarbatti) / Dhoop
-• Fresh flowers
-• Kumkum / Roli
-• Rice (Akshat)
-• Sandalwood paste (Chandan)
-• Bell (Ghanti) – optional
+- Durga Saptashati book
+
+Goddess Durga idol or picture
+
+Clean water
+
+Diya (oil lamp) with ghee or oil
+
+Incense sticks (Agarbatti) / Dhoop
+
+Fresh flowers
+
+Kumkum / Roli
+
+Rice (Akshat)
+
+Sandalwood paste (Chandan)
+
+Bell (Ghanti) - optional
 
 Offerings (Prasad):
-• Fruits (seasonal)
-• Sweets (halwa, peda, laddoo)
-• Dry fruits
-• Sugar crystals (Mishri)
 
-Benefits of Durga Saptashati Path:
-• Removes negative energies and fear
-• Brings protection and divine strength
-• Helps overcome obstacles and problems
-• Attracts peace, prosperity, and success
-• Enhances spiritual power and positivity`,
+- Fruits (seasonal)
+
+Sweets (halwa, peda, laddoo)
+
+Dry fruits
+
+Sugar crystals (Mishri)`,
   },
   {
     id: 3,
@@ -106,28 +101,37 @@ Benefits of Durga Saptashati Path:
     price: 2100,
     image: shivJi,
     badge: "Special Puja",
-    description: `Shiva Abhishek is one of the most sacred and powerful rituals dedicated to Lord Shiva, performed to seek blessings for peace, health, prosperity, and spiritual growth.
+    description: `Shiva Abhishek is one of the most sacred and powerful rituals dedicated to Lord Shiva , performed to seek blessings for peace, health, prosperity, and spiritual growth. In this puja, the Shivling is bathed (Abhishek) with holy items such as water, milk, curd, honey, ghee, sugar, Panchamrit, and sacred mantras like Om Namah Shivaya .
 
-In this puja, the Shivling is bathed (Abhishek) with holy items such as water, milk, curd, honey, ghee, sugar, Panchamrit, and sacred mantras like Om Namah Shivaya.
+By booking Shiva Abhishek Puja Online , devotees can participate in this divine ritual from anywhere. Experienced Vedic Pandits perform the complete Abhishek Vidhi as per scriptures, taking Sankalp in the devotee's name and chanting powerful Shiva mantras to remove negativity and obstacles from life.
 
-By booking Shiva Abhishek Puja Online, devotees can participate in this divine ritual from anywhere. Experienced Vedic Pandits perform the complete Abhishek Vidhi as per scriptures, taking Sankalp in the devotee's name and chanting powerful Shiva mantras to remove negativity and obstacles from life.
+Benefits of Shiva Abhishek Puja
 
-Benefits of Shiva Abhishek Puja:
-• Brings peace, mental calm, and positivity
-• Removes negative energies and past karmas
-• Improves health and emotional balance
-• Helps overcome obstacles and delays
-• Attracts prosperity and success
-• Highly beneficial during stress and difficult times
+- Brings peace, mental calm, and positivity
 
-Shiva Abhishek Vidhi Includes:
-• Sankalp with devotee's name and gotra
-• Shivling Abhishek with sacred items
-• Shiva mantra chanting
-• Aarti and prayers
-• Prasad after puja
+- Removes negative energies and past karmas
 
-This puja is especially auspicious on Monday, Shravan Month, Maha Shivaratri, Pradosh Vrat, and during important life events.`,
+- Improves health and emotional balance
+
+- Helps overcome obstacles and delays
+
+- Attracts prosperity and success
+
+- Highly beneficial during stress and difficult times
+
+Shiva Abhishek Vidhi Includes
+
+- Sankalp with devotee's name and gotra
+
+- Shivling Abhishek with sacred items
+
+- Shiva mantra chanting
+
+- Aarti and prayers
+
+- Prasad after puja
+
+This puja is especially auspicious on Monday, Shravan Month, Maha Shivaratri, Pradosh Vrat , and during important life events.`,
   },
   {
     id: 4,
@@ -139,34 +143,39 @@ This puja is especially auspicious on Monday, Shravan Month, Maha Shivaratri, Pr
     price: 1100,
     image: shriRam,
     badge: "Slots Filling Fast",
-    description: `Participate in the sacred Ramdarbar Puja from the comfort of your home. Worship Lord Ram, Sita Mata, Lakshman Ji, and Hanuman Ji online and receive their blessings.
+    description: `Participate in the sacred Ramdarbar Puja from the comfort of your home. Worship Lord Ram, Sita Mata, Lakshman Ji, and Hanuman Ji online and receive their blessings. Perfect for peace, prosperity, and spiritual well-being.
 
-Perfect for peace, prosperity, and spiritual well-being.
+Samagri (Puja Items) with Offerings
 
-Samagri (Puja Items) with Offerings:
-• Ramdarbar Idol / Picture
-• Clean Water
-• Diya with oil or ghee
-• Incense sticks / Dhoop
-• Fresh Flowers / Petals
-• Kumkum / Roli
-• Rice (Akshat)
-• Sandalwood Paste (Chandan)
-• Bell – Optional
-• Matchsticks / Lighter
+Ramdarbar Idol / Picture
 
-Offerings (Prasad):
-• Fruits – Banana, apple, seasonal fruits
-• Sweets – Ladoo, peda, halwa
-• Dry Fruits – Almonds, cashews, raisins
-• Sugar Crystals (Mishri)
+Clean Water
 
-Benefits of Ramdarbar Puja:
-• Brings peace and harmony at home
-• Removes obstacles and negative energies
-• Enhances spiritual energy and devotion
-• Attracts prosperity and well-being
-• Strengthens family relationships`,
+Diya with oil or ghee
+
+Incense sticks / Dhoop
+
+Fresh Flowers / Petals
+
+Kumkum / Roli
+
+Rice (Akshat)
+
+Sandalwood Paste (Chandan)
+
+Bell - Optional
+
+Matchsticks / Lighter
+
+Offerings (Prasad)
+
+Fruits - Banana, apple, seasonal fruits
+
+Sweets - Ladoo, peda, halwa
+
+Dry Fruits - Almonds, cashews, raisins
+
+Sugar Crystals (Mishri)`,
   },
   {
     id: 5,
@@ -178,36 +187,53 @@ Benefits of Ramdarbar Puja:
     price: 2100,
     image: vishnuJi,
     badge: "Special Puja",
-    description: `Vishnu Puja is a sacred Vedic ritual performed to seek the blessings of Lord Vishnu, the preserver and protector of the universe.
-
-This puja helps remove negativity, attract abundance, and bring peace and stability into life. Devotees worship Lord Vishnu through mantra chanting, offering flowers, Tulsi leaves, incense, and performing Aarti for overall well-being.
+    description: `Vishnu Puja is a sacred Vedic ritual performed to seek the blessings of Lord Vishnu, the preserver and protector of the universe. This puja helps remove negativity, attract abundance, and bring peace and stability into life. Devotees worship Lord Vishnu through mantra chanting, offering flowers, Tulsi leaves, incense, and performing Aarti for overall well-being.
 
 Performing Online Vishnu Puja ensures divine blessings for success, good health, family harmony, and spiritual upliftment. It is especially auspicious on Ekadashi, Thursdays, and during festivals like Vaikuntha Ekadashi.
 
 Vishnu Puja Samagri List
-Main Puja Items:
-• Tulsi (Holy Basil) Leaves
-• Fresh Flowers
-• Chandan (Sandalwood Paste)
-• Haldi, Kumkum
-• Akshat (rice)
-• Incense Sticks (Agarbatti)
-• Dhoop
-• Camphor (Kapoor)
-• Deepak (Oil or Ghee Lamp)
 
-Offerings:
-• Fruits
-• Sweets / Prasad
-• Panchamrit (Milk, Curd, Honey, Sugar, Ghee)
-• Water Kalash
+Main Puja Items
 
-Additional Items:
-• Puja Thali
-• Bell (Ghanti)
-• Cloth for deity
-• Conch (Shankh) (optional)
-• Vishnu Yantra (optional)`,
+Tulsi (Holy Basil) Leaves
+
+Fresh Flowers
+
+Chandan (Sandalwood Paste)
+
+Haldi, Kumkum
+
+Akshat (rice)
+
+Incense Sticks (Agarbatti)
+
+Dhoop
+
+Camphor (Kapoor)
+
+Deepak (Oil or Ghee Lamp)
+
+Offerings
+
+Fruits
+
+Sweets / Prasad
+
+Panchamrit (Milk, Curd, Honey, Sugar, Ghee)
+
+Water Kalash
+
+Additional Items
+
+Puja Thali
+
+Bell (Ghanti)
+
+Cloth for deity
+
+Conch (Shankh) (optional)
+
+Vishnu Yantra (optional)`,
   },
   {
     id: 6,
@@ -219,7 +245,23 @@ Additional Items:
     price: 21000,
     image: shaniDev,
     badge: "Limited Slots",
-    description: "A focused graha shanti booking for relief, protection, and a carefully managed temple ritual experience.",
+    description: `Rahu-Ketu Shanti Puja is a powerful Vedic ritual performed to reduce the negative effects of Rahu and Ketu in one's horoscope. Rahu-Ketu dosha can cause sudden problems, fear, confusion, health issues, financial losses, delays in marriage, career instability, and mental stress.
+
+With Rahu-Ketu Shanti Puja Online , devotees can perform this sacred puja from anywhere. Experienced Vedic Pandits conduct the complete puja as per scriptures, taking Sankalp in the devotee's name and chanting powerful Rahu-Ketu mantras along with havan to restore balance and positivity.
+
+Benefits of Rahu -Ketu Shanti Puja
+
+- Reduces Rahu-Ketu dosha and negative planetary effects
+
+- Removes fear, anxiety, and confusion
+
+- Helps overcome sudden losses and obstacles
+
+- Improves career growth and financial stability
+
+- Brings peace, clarity, and spiritual protection
+
+- Beneficial during Rahu-Ketu Mahadasha or Antardasha`,
   },
   {
     id: 7,
@@ -231,7 +273,9 @@ Additional Items:
     price: 5100,
     image: ganeshJi,
     badge: "Festival Special",
-    description: "Book a complete Shri Ganesh puja with thoughtful planning, auspicious guidance, and a polished devotional experience.",
+    description: `Ganesh Sthapana Puja is a sacred Vedic ritual performed to invoke Lord Ganesha , the remover of obstacles and the god of wisdom, success, and prosperity. This puja is performed before starting any new work, business, housewarming, or auspicious event to ensure smooth beginnings and divine blessings.
+
+With Ganesh Sthapana Puja Online , devotees can easily book this puja from anywhere. Experienced Vedic Pandits perform the complete Ganapati Sthapana Vidhi with proper Sankalp, mantra chanting, and traditional rituals as per scriptures. The puja is conducted in the devotee's name to bring positivity, success, and protection.`,
   },
   {
     id: 8,
@@ -243,7 +287,53 @@ Additional Items:
     price: 2100,
     image: hanumanJi,
     badge: "Special Puja",
-    description: "A Hanuman Ji puja booking focused on strength, protection, and temple-led spiritual support for your family.",
+    description: `Hanuman Puja is performed to gain strength, courage, protection, and relief from negative energies. It helps remove fear, planetary doshas, obstacles, black magic, and brings confidence & success. This service includes complete samagri, offerings, and Vedic pandit support .
+
+SAMAGRI INCLUDED (Complete Puja Kit)
+
+Hanuman Ji Photo / Idol
+
+Bhog (Boondi / Besan Ladoo)
+
+Sindoor (for Hanuman Ji)
+
+Jasmine Oil (Chameli Tel)
+
+Red Cloth (Vastra)
+
+Flowers (Red/Orange)
+
+Roli, Akshat
+
+Dhoop, Incense Sticks
+
+Diya (Oil/Ghee)
+
+Panchamrit
+
+Kalash, Holy Water
+
+Chandan
+
+Coconut
+
+Betel Leaves & Betel Nut
+
+Sacred Thread (Moli/Kalawa)
+
+Kapoor (Camphor)
+
+OFFERINGS (Bhog & Ritual Items)
+
+Boondi / Besan Ladoo (Hanuman Ji's favorite)
+
+Sindoor with Jasmine Oil - Hanuman Ji's special offering
+
+Fruits (Banana, Apple)
+
+Coconut offering
+
+Aarti Thali with Diya, Dhoop & Flowers`,
   },
   {
     id: 9,
@@ -255,7 +345,9 @@ Additional Items:
     price: 2999,
     image: shivJi,
     badge: "Limited Slots",
-    description: "Reserve a protection-focused Bhairav puja with clear guidance, fast confirmation, and temple support.",
+    description: `Kaal Bhairav Puja is a powerful and protective Vedic ritual dedicated to Lord Kaal Bhairav, the fierce form of Lord Shiva and the guardian of time and justice. This puja is performed to remove fear, negative energies, black magic effects, obstacles, and unseen troubles from life.
+
+By booking Kaal Bhairav Puja Online , devotees can perform this sacred ritual from anywhere. The puja is conducted by experienced Vedic Pandits following proper shastra-based vidhi, mantra chanting, and Sankalp taken in the devotee's name for divine protection and strength.`,
   },
   {
     id: 10,
@@ -267,7 +359,21 @@ Additional Items:
     price: 60000,
     image: shivJi,
     badge: "Special Puja",
-    description: "A premium dosha nivaran booking with temple coordination for families seeking relief and ritual accuracy.",
+    description: `Kaal Sarp Dosh Puja is a powerful Vedic ritual performed to neutralize the negative effects of Kaal Sarp Yoga , which occurs when all planets are positioned between Rahu and Ketu in a horoscope. This dosha can cause delays, struggles, fear, health issues, financial instability, and obstacles in marriage and career.
+
+By booking Kaal Sarp Dosh Puja Online , experienced Vedic Pandits perform the complete puja with proper Sankalp, mantra chanting, and rituals as per scriptures. The puja helps restore balance, peace, and positive energy in life.
+
+Benefits of Kaal Sarp Dosh Puja
+
+- Removes negative effects of Kaal Sarp Yoga
+
+- Reduces struggles, delays, and fear
+
+- Improves marriage, career, and finances
+
+- Protects from Rahu -Ketu dosha effects
+
+- Brings peace, success, and positivity`,
   },
   {
     id: 11,
@@ -279,7 +385,9 @@ Additional Items:
     price: 1799,
     image: mahaLaxmi,
     badge: "Festival Special",
-    description: "Invoke abundance and prosperity with a premium Lakshmi Kubera booking designed for ease and blessings.",
+    description: `Lakshmi Kubera Puja is a sacred Vedic ritual performed to attract wealth, prosperity, abundance, and financial stability. This powerful puja invokes the blessings of Goddess Lakshmi, the goddess of fortune, and Lord Kubera , the divine treasurer, to remove financial obstacles and open new paths of success and growth.
+
+With Lakshmi Kubera Puja Online, devotees can participate in this auspicious ritual from anywhere. Experienced Vedic priests perform the complete puja as per scriptures, taking Sankalp in the devotee's name and offering prayers with sacred mantras, flowers, lamps, and offerings.`,
   },
   {
     id: 12,
@@ -291,7 +399,9 @@ Additional Items:
     price: 11000,
     image: mangalDev,
     badge: "Slots Filling Fast",
-    description: "A focused Mangal Dev puja booking with temple-managed arrangements and smooth online confirmation.",
+    description: `Mangal Dosh Puja is a powerful Vedic ritual performed to reduce or remove the negative effects of Mangal (Mars) Dosha in the horoscope. This dosha can cause delays and obstacles in marriage, relationships, health, career, and peace of mind . The 7-Day Mangal Dosh Puja is a complete and effective remedy performed as per Vedic scriptures.
+
+By booking Mangal Dosh Puja - 7 Day Online , experienced Vedic Pandits perform the full puja with proper Sankalp , mantra chanting, and sacred rituals to pacify the planet Mars. The puja helps bring harmony, stability, and positive results in married and personal life.`,
   },
   {
     id: 13,
@@ -303,7 +413,53 @@ Additional Items:
     price: 2100,
     image: suryaDev,
     badge: "Special Puja",
-    description: "A balanced navgrah ritual booking that emphasizes planetary harmony and guided temple service.",
+    description: `Navgrah Puja is performed to balance the energies of the nine planets and remove obstacles caused by Graha Doshas. This powerful Vedic Puja helps improve health, career, relationships, prosperity, and brings harmony into life. The service includes complete samagri, offerings, and professional Vedic pandit support .
+
+SAMAGRI INCLUDED (Complete Puja Kit)
+
+Navgrah Yantra / Navgrah Photo
+
+Nine Planet Color Cloth Pieces
+
+Flowers (All 9 colors preferred)
+
+Fruits & Sweets
+
+Roli, Akshat, Haldi, Kumkum
+
+Panchamrit
+
+Dhoop, Incense Sticks
+
+Ghee / Oil Diya
+
+Kalash, Ganga Jal
+
+Betel Leaves & Betel Nut
+
+Coconut
+
+Sandalwood (Chandan)
+
+Rice, Wheat, Sesame (Til)
+
+Nine types of grains (Navdhan) - Very important
+
+Kapoor (Camphor)
+
+OFFERINGS (Bhog & Ritual Items)
+
+Fruits (Banana, Apple, Pomegranate)
+
+Sweet (Ladoo / Mishri)
+
+Panchamrit Offering
+
+Coconut & Betel Leaves
+
+9-Colored Flower Garland
+
+Navdhan (Nine Grains Offering)`,
   },
   {
     id: 14,
@@ -315,7 +471,9 @@ Additional Items:
     price: 11000,
     image: suryaDev,
     badge: "Limited Slots",
-    description: "Ideal for grah dosha shanti, this booking includes temple support and clear ritual coordination.",
+    description: `Navgrah Shanti Puja is a powerful Vedic ritual performed to pacify the nine planets (Navgrah) and reduce the negative effects of planetary doshas in a person's horoscope. This puja helps bring peace, stability, success, health, and prosperity by balancing planetary energies.
+
+By booking Navgrah Shanti Puja Online , devotees can perform this sacred ritual from anywhere. Experienced Vedic Pandits conduct the complete Grah Dosha Nivaran Puja as per scriptures, taking Sankalp in the devotee's name and chanting powerful Navgrah mantras for planetary peace and harmony.`,
   },
   {
     id: 15,
@@ -327,7 +485,65 @@ Additional Items:
     price: 2100,
     image: mahaLaxmi,
     badge: "Festival Special",
-    description: "A graceful Laxmi puja booking for homes and families seeking prosperity and a premium temple ritual experience.",
+    description: `Lakshmi Puja - Puja Description
+
+Lakshmi Puja is a sacred ritual performed to seek the divine blessings of Goddess Lakshmi, the goddess of wealth, prosperity, and abundance. Through Vedic mantras, offerings, and Aarti, devotees pray for financial stability, business growth, success, and overall well-being. Lakshmi Puja removes obstacles, attracts positive energy, and brings peace and harmony into the home.
+
+Performing Online Lakshmi Puja ensures that experienced priests invoke Maha Lakshmi with proper rituals, chanting for your name, gotra, and specific wishes. This puja is highly auspicious on Fridays, Purnima, and festivals like Diwali.
+
+Lakshmi Puja Samagri List
+
+Main Puja Items
+
+Idol/photo of Goddess Lakshmi
+
+Fresh Flowers & Garland
+
+Lotus flowers (if available)
+
+Haldi, Kumkum
+
+Akshat (Rice)
+
+Chandan (Sandalwood paste)
+
+Incense sticks (Agarbatti)
+
+Dhoop
+
+Deepak (Ghee/Oil Lamp)
+
+Camphor (Kapoor)
+
+Offerings
+
+Fruits
+
+Sweets / Prasad
+
+Panchamrit
+
+Cococut
+
+Betel Leaves & Betel Nuts (Paan & Supari)
+
+Coins or currency notes for blessings
+
+Naivedya (Kheer, Laddoo, etc.)
+
+Additional Items
+
+Kalash with water
+
+Mango leaves
+
+Red cloth for the altar
+
+Puja Thali
+
+Bell (Ghanti)
+
+Diya Batti (Cotton Wicks)`,
   },
   {
     id: 16,
@@ -339,7 +555,61 @@ Additional Items:
     price: 2100,
     image: ganeshJi,
     badge: "Special Puja",
-    description: "A polished Ganesh puja booking service with temple guidance, smooth scheduling, and devotional reassurance.",
+    description: `Ganesh Puja is performed to seek blessings of Lord Ganesha, the remover of obstacles and the giver of wisdom & prosperity. This service includes complete samagri, traditional offerings, and expert pandit support for a smooth puja experience at home or office.
+
+SAMAGRI INCLUDED (Complete Puja Kit)
+
+-
+Ganesh Idol / Photo
+
+-
+Fresh Flowers (Red & Yellow)
+
+-
+Durva Grass
+
+-
+Modak / Ladoo
+
+-
+Fruits (Bananas, Oranges)
+
+-
+Roli, Akshat, Sindoor
+
+-
+Haldi & Kumkum
+
+-
+Incense sticks, Dhoop
+
+-
+Ghee/Oil Diya
+
+-
+Panchamrit Samagri (Milk, Curd, Honey, Ghee, Sugar)
+
+-
+Kalash, Ganga Jal
+
+-
+Coconut
+
+-
+Betel Leaves & Betel Nut
+
+-
+Cloth for Idol
+
+-
+Rice, Wheat, Turmeric piece
+
+-
+Kapoor (Camphor)
+
+OFFERINGS (Bhog & Ritual Items)
+
+Modak (Ganesha's favorite) Fresh Fruits for Naivedyam Panchamrit Offering Coconut & Betel Leaves Aarti Thali (Diya, Flowers, Dhoop) Sweets (Ladoo / Pedha)`,
   },
   {
     id: 17,
@@ -351,7 +621,41 @@ Additional Items:
     price: 2100,
     image: radhaRani,
     badge: "Limited Slots",
-    description: "A gentle devotional booking inspired by bhakti traditions, ideal for peace, grace, and home positivity.",
+    description: `Tulsi Puja is a sacred Hindu ritual to worship Tulsi Mata, considered the earthly form of Goddess Lakshmi and beloved of Lord Vishnu. Performing this puja brings peace, positivity, and prosperity to your home. Book online and participate in the ritual from anywhere.
+
+Tulsi Puja Samagri with Offerings
+
+Tulsi Plant - Clean & well-maintained
+
+Clean Water - Fresh and pure
+
+Diya (Oil Lamp) - With oil or ghee
+
+Incense Sticks / Dhoop - For fragrance and rituals
+
+Fresh Flowers / Petals - For offering & decoration
+
+Kumkum / Roli - For tilak
+
+Rice (Akshat) - For rituals
+
+Sandalwood Paste (Chandan) - Spiritual fragrance
+
+Bell (Ghanti) - Optional, for aarti
+
+Matchsticks / Lighter - To light diya & incense
+
+Offerings (Prasad):
+
+Fruits - Banana, apple, seasonal fruits
+
+Sweets - Ladoo, peda, homemade sweets
+
+Dry Fruits - Almonds, cashews, raisins
+
+Sugar Crystals (Mishri) - Divine offering
+
+Tulsi Leaves - For offering to the deity`,
   },
   {
     id: 18,
@@ -363,7 +667,35 @@ Additional Items:
     price: 31000,
     image: brahmaJi,
     badge: "Festival Special",
-    description: "A sacred ancestral ritual booking supported by temple coordination and premium ceremonial planning.",
+    description: `Pitru Dosh Nivaran Puja is a sacred Vedic ritual performed to seek blessings of ancestors (Pitru Dev) and to remove Pitru Dosh from one's horoscope and family lineage. Pitru Dosh may cause repeated obstacles, delays in marriage, financial problems, health issues, child-related concerns, and lack of peace in life.
+
+By booking Pitru Dosh Nivaran Puja Online , experienced Vedic Pandits perform the complete Pitra Shanti Vidhi with proper Sankalp , mantra chanting, tarpan, and pind daan rituals as per scriptures. This puja helps bring ancestral peace, family harmony, prosperity, and relief from long-term problems.
+
+Benefits of 7 Days Pitru Dosh Puja
+
+- Deep removal of Pitru Dosh and ancestral karmas
+
+- Long-term peace and blessings from ancestors
+
+- Improves marriage, child, and family harmony
+
+- Reduces repeated obstacles and delays
+
+- Brings stability, prosperity, and positivity
+
+7 Days Puja Vidhi Includes
+
+- Daily Sankalp with name & gotra
+
+- Tarpan & Pind Daan rituals
+
+- Pitru mantra chanting (7 days)
+
+- Havan and offerings
+
+- Aarti & prasad
+
+This puja is most auspicious during Pitru Paksha, Amavasya, Sarvapitri Amavasya, or before important life decisions.`,
   },
   {
     id: 19,
@@ -375,7 +707,39 @@ Additional Items:
     price: 1399,
     image: shivJi,
     badge: "Slots Filling Fast",
-    description: "A classic Rudrabhishek booking with a strong temple ritual experience and smooth online confirmation.",
+    description: `Rudrabhishek Puja is one of the most powerful and sacred rituals dedicated to Lord Shiva, performed to seek divine blessings for peace, prosperity, health, and spiritual growth. In this puja, Lord Shiva is worshipped through Abhishek using holy items such as water, milk, curd, honey, ghee, sugar, and sacred mantras, especially the chanting of Rudra Mantras from the Vedas.
+
+By booking Rudrabhishek Puja Online, devotees can easily perform this auspicious ritual without being physically present at the temple. Our experienced Vedic priests perform the complete Abhishek Vidhi as per scriptures, Sankalp is taken in your name, and the puja is conducted with full devotion and purity.
+
+Benefits of Rudrabhishek Puja
+
+- Removes negative energies and doshas
+
+- Brings peace, mental clarity, and emotional balance
+
+- Helps overcome obstacles and delays in life
+
+- Improves health and reduces stress
+
+- Attracts prosperity, success, and stability
+
+- Reduces the effects of past karmas
+
+- Highly beneficial for Kaal Sarp Dosha, Grah Dosha, and stress-related issues
+
+Complete Abhishek Vidhi Includes
+
+- Sankalp in devotee's name and gotra
+
+- Abhishek with Panchamrit and sacred substances
+
+- Chanting of Rudra Mantras
+
+- Aarti and prayers for blessings
+
+- Prasad offered after puja
+
+This puja is especially powerful when performed on Monday, Shravan Month, Pradosh Vrat, Maha Shivaratri, or during difficult planetary periods.`,
   },
   {
     id: 20,
@@ -387,7 +751,21 @@ Additional Items:
     price: 2199,
     image: vishnuJi,
     badge: "Special Puja",
-    description: "A complete Satyanarayan booking with clear ritual guidance, family inclusion, and temple-led coordination.",
+    description: `Satyanarayan Vrat Katha is a highly auspicious Hindu ritual dedicated to Lord Vishnu, performed to seek peace, prosperity, and success in life. With our Online E-Puja Service , you can now perform this sacred vrat conveniently from anywhere.
+
+The puja is conducted by qualified and experienced Vedic Pandits following traditional scriptures. The service includes proper sankalp , complete Satyanarayan Katha path, and step-by-step puja vidhi , ensuring spiritual authenticity and devotion.
+
+This puja is especially beneficial for:
+
+- Family peace and harmony
+
+- Financial growth and stability
+
+- New beginnings such as marriage, housewarming, or business
+
+- Removal of obstacles and negative energies
+
+After booking, the puja is performed on your chosen date and time, and confirmation is provided upon completion.`,
   },
   {
     id: 21,
@@ -399,7 +777,23 @@ Additional Items:
     price: 5100,
     image: shaniDev,
     badge: "Limited Slots",
-    description: "A premium Shani Dev puja booking for peace, discipline, and graha relief with temple support.",
+    description: `Shani Shanti Puja is a powerful Vedic ritual performed to reduce the malefic effects of Lord Shani (Saturn) in one's horoscope. This puja is especially beneficial during Shani Sade Sati, Shani Dhaiya, Shani Mahadasha , or when facing continuous struggles, delays, financial problems, health issues, or mental stress.
+
+With Shani Shanti Puja Booking Online , devotees can easily perform this sacred puja from anywhere. Experienced Vedic Pandits conduct the complete Shani Shanti Vidhi with proper Sankalp , Shani mantra chanting, til oil abhishek, and havan as per scriptures to bring peace, justice, and stability in life.
+
+Benefits of Shani Shanti Puja
+
+- Reduces effects of Shani Sade Sati & Dhaiya
+
+- Removes delays, obstacles, and hardships
+
+- Brings stability in career, business, and finances
+
+- Improves health, patience, and mental peace
+
+- Protects from injustice, fear, and negativity
+
+- Brings blessings of discipline, success, and balance`,
   },
   {
     id: 22,
@@ -411,7 +805,23 @@ Additional Items:
     price: 1599,
     image: hanumanJi,
     badge: "Special Puja",
-    description: "A spiritually uplifting Hanuman Ji booking with temple-backed coordination and smooth online flow.",
+    description: `Sundarkand Paath is a sacred recitation from the Ramcharitmanas , dedicated to Lord Hanuman . It is widely believed to remove obstacles, reduce stress, and bring courage, protection, and positivity.
+
+With our Online E- Paath Service, experienced Vedic Pandits perform the complete Sundarkand Paath following traditional rituals and correct pronunciation. You can book the paath from anywhere, choose a suitable date and time, and receive confirmation after completion.
+
+This paath is especially beneficial for overcoming challenges related to career, business, health, and mental peace, and for protection from negative energies.
+
+E-Puja Online Service Includes
+
+- Complete Sundarkand Paath
+
+- Proper Vidhi & Sankalp (Name & Gotra)
+
+- Online / Live E- Paath Option
+
+- Experienced Vedic Pandits
+
+- Paath Completion Confirmation`,
   },
   {
     id: 23,
@@ -423,7 +833,37 @@ Additional Items:
     price: 5100,
     image: brahmaJi,
     badge: "Limited Slots",
-    description: "A premium vastu-focused ritual booking designed for harmony, alignment, and temple-managed simplicity.",
+    description: `Vastu Shanti Puja is a sacred Vedic ritual performed to remove Vastu Dosh from homes, offices, shops, factories, and plots. This puja is conducted to balance the five elements (Pancha Tatva) and ensure peace, prosperity, good health, and positive energy in the living or working space.
+
+With Vastu Shanti Puja Online , experienced Vedic Pandits perform the complete puja as per scriptures, taking Sankalp in the devotee's name and offering prayers through mantra chanting, havan, and traditional rituals. This puja helps eliminate negative energies and attracts harmony, growth, and success.
+
+Benefits of Vastu Shanti Puja
+
+- Removes Vastu Dosh and negative energies
+
+- Brings peace, prosperity, and happiness
+
+- Improves health and family harmony
+
+- Supports business growth and financial stability
+
+- Creates positive vibrations in home and workplace
+
+- Ensures success in new beginnings
+
+Vastu Shanti Puja Vidhi Includes
+
+- Sankalp with devotee's name and gotra
+
+- Vastu Devta invocation
+
+- Vedic mantra chanting
+
+- Havan and offerings
+
+- Aarti and prasad
+
+This puja is highly auspicious during Griha Pravesh, New Home Entry, Office Opening, and before starting new construction or renovations.`,
   },
 ];
 

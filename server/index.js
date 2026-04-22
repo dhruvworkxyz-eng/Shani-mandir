@@ -8,6 +8,11 @@ const app = express();
 const port = process.env.PORT || 8787;
 const razorpayKeyId = process.env.RAZORPAY_KEY_ID;
 const razorpayKeySecret = process.env.RAZORPAY_KEY_SECRET;
+const emailJsServiceId = process.env.EMAILJS_SERVICE_ID;
+const emailJsOrderTemplateId = process.env.EMAILJS_ORDER_TEMPLATE_ID;
+const emailJsPublicKey = process.env.EMAILJS_PUBLIC_KEY;
+const emailJsPrivateKey = process.env.EMAILJS_PRIVATE_KEY;
+const adminNotificationEmail = process.env.ADMIN_NOTIFICATION_EMAIL;
 
 const razorpay =
   razorpayKeyId && razorpayKeySecret
@@ -22,6 +27,89 @@ app.use(express.json());
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
+});
+
+const sendEmailJsEmail = async (templateParams) => {
+  if (!emailJsServiceId || !emailJsOrderTemplateId || !emailJsPublicKey) {
+    throw new Error("EmailJS order notification variables are not configured.");
+  }
+
+  const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      service_id: emailJsServiceId,
+      template_id: emailJsOrderTemplateId,
+      user_id: emailJsPublicKey,
+      accessToken: emailJsPrivateKey || undefined,
+      template_params: templateParams,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || "Unable to send EmailJS notification.");
+  }
+};
+
+app.post("/api/notifications/order", async (req, res) => {
+  try {
+    const { order } = req.body;
+
+    if (!order?.orderId || !order?.customer?.email) {
+      res.status(400).json({ message: "Missing required order notification details." });
+      return;
+    }
+
+    if (!adminNotificationEmail) {
+      res.status(500).json({ message: "Admin notification email is not configured." });
+      return;
+    }
+
+    const itemsSummary = Array.isArray(order.items)
+      ? order.items
+          .map((item) => `${item.name} | Qty: ${item.quantity} | Rs. ${Number(item.price || 0) * Number(item.quantity || 0)}`)
+          .join("\n")
+      : "";
+
+    const commonParams = {
+      customer_name: order.customer?.name || "",
+      customer_email: order.customer?.email || "",
+      customer_phone: order.customer?.phone || "",
+      customer_address: order.customer?.address || "",
+      order_id: order.orderId || "",
+      payment_id: order.paymentId || "",
+      payment_method: order.method || "",
+      order_status: order.status || "Confirmed",
+      total_amount: `Rs. ${Number(order.total || 0).toLocaleString("en-IN")}`,
+      item_count: String(order.itemCount || order.items?.length || 0),
+      ordered_items: itemsSummary,
+      created_at: order.createdAt || new Date().toISOString(),
+    };
+
+    await Promise.all([
+      sendEmailJsEmail({
+        ...commonParams,
+        to_email: order.customer.email,
+        subject: `Order Confirmation - ${order.orderId}`,
+        recipient_type: "Customer",
+      }),
+      sendEmailJsEmail({
+        ...commonParams,
+        to_email: adminNotificationEmail,
+        subject: `New Order Received - ${order.orderId}`,
+        recipient_type: "Admin",
+      }),
+    ]);
+
+    res.json({ ok: true });
+  } catch (error) {
+    res.status(500).json({
+      message: error?.message || "Unable to send order notifications.",
+    });
+  }
 });
 
 app.post("/api/payments/razorpay/order", async (req, res) => {

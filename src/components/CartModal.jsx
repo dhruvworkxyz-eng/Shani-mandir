@@ -1,13 +1,15 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FaBoxOpen, FaCircleCheck, FaMoneyBillWave, FaXmark } from "react-icons/fa6";
 import { useAuth } from "../context/AuthContext";
 import { useLanguage } from "../context/LanguageContext";
 import { buildApiUrl } from "../lib/api";
+import { appendAdminOrder } from "../lib/adminOrders";
 import { appendOrderHistory } from "../lib/orderHistory";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^[6-9]\d{9}$/;
 const pincodePattern = /^\d{6}$/;
+const adminWhatsAppNumber = (import.meta.env.VITE_ADMIN_WHATSAPP_NUMBER || "919911921125").replace(/\D/g, "");
 
 const loadRazorpayScript = () =>
   new Promise((resolve) => {
@@ -74,6 +76,61 @@ const buildHistoryEntry = ({ cartItems, customer, summary, total, groupedItems, 
   itemCount: cartItems.length,
   userId: user?.uid || user?.email || "",
 });
+
+const notifyOrderParties = async (order) => {
+  if (!order) {
+    return;
+  }
+
+  try {
+    await fetch(buildApiUrl("/api/notifications/order"), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ order }),
+    });
+  } catch (error) {
+    console.error("Order notification failed", error);
+  }
+};
+
+const buildWhatsAppOrderMessage = (order) => {
+  if (!order) {
+    return "";
+  }
+
+  const itemLines = (order.items || [])
+    .map((item) => `- ${item.name} | Qty: ${item.quantity} | Rs. ${Number(item.price || 0) * Number(item.quantity || 0)}`)
+    .join("\n");
+
+  return [
+    "Order Confirmation - Shani Dham Mandir",
+    "",
+    `Order ID: ${order.orderId || "-"}`,
+    `Payment ID: ${order.paymentId || "-"}`,
+    `Payment Method: ${order.method || "-"}`,
+    `Status: ${order.status || "Confirmed"}`,
+    `Total: Rs. ${Number(order.total || 0).toLocaleString("en-IN")}`,
+    "",
+    "Customer Details",
+    `Name: ${order.customer?.name || "-"}`,
+    `Email: ${order.customer?.email || "-"}`,
+    `Phone: ${order.customer?.phone || "-"}`,
+    `Address: ${order.customer?.address || "-"}`,
+    "",
+    "Ordered Items",
+    itemLines || "-",
+  ].join("\n");
+};
+
+const openWhatsAppLink = (url) => {
+  if (!url) {
+    return;
+  }
+
+  window.open(url, "_blank", "noopener,noreferrer");
+};
 
 const CartModal = ({
   isOpen,
@@ -145,6 +202,7 @@ const CartModal = ({
   const groupedItems = useMemo(() => groupCartItems(cartItems), [cartItems]);
   const total = useMemo(() => cartItems.reduce((sum, item) => sum + (item?.price || 0), 0), [cartItems]);
   const formattedAddress = useMemo(() => formatCustomerAddress(customer), [customer]);
+  const placedOrderWhatsAppMessage = useMemo(() => buildWhatsAppOrderMessage(placedOrder), [placedOrder]);
 
   if (!isOpen) {
     return null;
@@ -201,21 +259,22 @@ const CartModal = ({
 
   const finishOrder = (summary) => {
     const historyUserId = user?.uid || user?.email;
-    if (historyUserId) {
-      appendOrderHistory(
-        historyUserId,
-        buildHistoryEntry({
-          cartItems,
-          customer,
-          summary,
-          total,
-          groupedItems,
-          user,
-        })
-      );
-    }
+    const historyEntry = buildHistoryEntry({
+      cartItems,
+      customer,
+      summary,
+      total,
+      groupedItems,
+      user,
+    });
 
-    setPlacedOrder(summary);
+    if (historyUserId) {
+      appendOrderHistory(historyUserId, historyEntry);
+    }
+    appendAdminOrder(historyEntry);
+    notifyOrderParties(historyEntry);
+
+    setPlacedOrder(historyEntry);
     setCheckoutOpen(false);
     setMessage({ type: "success", text: t("cart.successPlaced") });
     clearCart?.();
@@ -360,6 +419,28 @@ const CartModal = ({
               <span>{t("cart.paymentMethod")}: {placedOrder.method}</span>
               <span>{t("cart.orderId")}: {placedOrder.orderId}</span>
               {placedOrder.paymentId ? <span>{t("cart.paymentId")}: {placedOrder.paymentId}</span> : null}
+              <div className="cart-success-actions">
+                <button
+                  type="button"
+                  className="auth-submit-btn"
+                  onClick={() =>
+                    openWhatsAppLink(
+                      `https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(placedOrderWhatsAppMessage)}`
+                    )
+                  }
+                >
+                  {t("cart.whatsappAdmin", "Send on WhatsApp")}
+                </button>
+                <button
+                  type="button"
+                  className="auth-submit-btn cart-success-secondary-btn"
+                  onClick={() =>
+                    openWhatsAppLink(`https://wa.me/?text=${encodeURIComponent(placedOrderWhatsAppMessage)}`)
+                  }
+                >
+                  {t("cart.whatsappShare", "Share Order on WhatsApp")}
+                </button>
+              </div>
             </div>
           </div>
         ) : groupedItems.length === 0 ? (
