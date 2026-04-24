@@ -91,7 +91,15 @@ const products = [
     discount: "65% OFF",
     image: blackObsidianGemstone,
     images: [blackObsidianGemstone],
-    priceRangeLabel: "Rs. 700.00 - Rs. 2,000.00 | Price range: Rs. 700.00 through Rs. 2,000.00 + Free Shipping",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 700 },
+      { label: "5.25 Ratti", price: 900 },
+      { label: "6.25 Ratti", price: 1200 },
+      { label: "7.25 Ratti", price: 1500 },
+      { label: "8.25 Ratti", price: 2000 },
+    ],
+    priceRangeLabel:
+      "4.25 Ratti - Rs. 700 | 5.25 Ratti - Rs. 900 | 6.25 Ratti - Rs. 1,200 | 7.25 Ratti - Rs. 1,500 | 8.25 Ratti - Rs. 2,000",
     specifications: [
       { label: "Gemstone", value: "Black Obsidian" },
       { label: "Shape", value: "Oval Cabochon" },

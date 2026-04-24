@@ -2753,6 +2753,53 @@
   font-weight: 700;
 }
 
+.item-price-options-card {
+  display: grid;
+  gap: 12px;
+}
+
+.item-price-options-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item-price-option-btn {
+  display: grid;
+  gap: 4px;
+  min-width: 120px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(194, 65, 12, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 245, 230, 0.92) 100%);
+  color: #7f1d1d;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.item-price-option-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(120, 17, 2, 0.08);
+}
+
+.item-price-option-btn strong {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.item-price-option-btn span {
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.item-price-option-btn-active {
+  border-color: rgba(194, 65, 12, 0.5);
+  background: linear-gradient(135deg, rgba(255, 244, 214, 0.98) 0%, rgba(255, 232, 191, 0.96) 100%);
+  box-shadow: 0 18px 34px rgba(245, 158, 11, 0.18);
+}
+
 .item-offer-box {
   display: flex;
   align-items: center;
@@ -4700,12 +4747,12 @@ body {
   opacity: 0;
 }
 
-.shop-product-card-clickable:hover .shop-product-image-primary {
+.shop-product-card-clickable[data-has-secondary-image="true"]:hover .shop-product-image-primary {
   opacity: 0;
   transform: scale(1.03);
 }
 
-.shop-product-card-clickable:hover .shop-product-image-secondary {
+.shop-product-card-clickable[data-has-secondary-image="true"]:hover .shop-product-image-secondary {
   opacity: 1;
   transform: scale(1.03);
 }
@@ -4967,6 +5014,19 @@ body {
   font-weight: 800;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#home,
+#shop,
+#online-puja-booking,
+#kundali,
+#about-mandir,
+#contact {
+  scroll-margin-top: 150px;
+}
+
 .shop-cart-column {
   position: sticky;
   top: 96px;
@@ -4977,6 +5037,17 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header-shop-trigger button,
+.header-mobile-shop-trigger button {
   border: 0;
   background: transparent;
   color: inherit;

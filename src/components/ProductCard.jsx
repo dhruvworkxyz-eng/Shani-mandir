@@ -8,6 +8,7 @@ const ProductCard = ({ product, onViewProduct }) => {
 
   const gallery = Array.isArray(product.images) && product.images.length ? product.images : [product.image];
   const [primaryImage, secondaryImage] = gallery;
+  const hasSecondaryImage = Boolean(secondaryImage);
 
   const handleViewProduct = () => {
     if (typeof onViewProduct === "function") {
@@ -21,6 +22,7 @@ const ProductCard = ({ product, onViewProduct }) => {
       onClick={handleViewProduct}
       role="button"
       tabIndex={0}
+      data-has-secondary-image={hasSecondaryImage ? "true" : "false"}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();

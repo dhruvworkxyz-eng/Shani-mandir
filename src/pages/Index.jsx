@@ -25,6 +25,10 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   useEffect(() => {
     if (location.state?.openAuth) {
       setAuthModalOpen(true);
@@ -43,16 +47,40 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
 
     window.requestAnimationFrame(() => {
       window.requestAnimationFrame(() => {
-        const element = document.getElementById("history");
-        if (element) {
-          const top = element.getBoundingClientRect().top + window.scrollY - 150;
-          window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
-        }
+        scrollToSection("shop");
       });
     });
 
     navigate(location.pathname, { replace: true, state: {} });
   }, [location.pathname, location.state, navigate]);
+
+  useEffect(() => {
+    if (!location.state?.sectionId) {
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        scrollToSection(location.state.sectionId);
+      });
+    });
+
+    navigate(location.pathname, { replace: true, state: {} });
+  }, [location.pathname, location.state, navigate]);
+
+  useEffect(() => {
+    if (!location.hash) {
+      return;
+    }
+
+    const sectionId = location.hash.replace("#", "");
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        scrollToSection(sectionId);
+      });
+    });
+  }, [location.hash]);
 
   const browseTempleProducts = () => {
     setCartStartInCheckout(false);
@@ -61,11 +89,7 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
 
     window.requestAnimationFrame(() => {
       window.requestAnimationFrame(() => {
-        const element = document.getElementById("history");
-        if (element) {
-          const top = element.getBoundingClientRect().top + window.scrollY - 150;
-          window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
-        }
+        scrollToSection("shop");
       });
     });
   };
@@ -80,11 +104,7 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
     setShopCategory(product.category);
 
     window.requestAnimationFrame(() => {
-      const element = document.getElementById("history");
-      if (element) {
-        const top = element.getBoundingClientRect().top + window.scrollY - 150;
-        window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
-      }
+      scrollToSection("shop");
 
       window.setTimeout(() => {
         setSelectedItem(product);
@@ -138,11 +158,7 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
 
           window.requestAnimationFrame(() => {
             window.requestAnimationFrame(() => {
-              const element = document.getElementById("history");
-              if (element) {
-                const top = element.getBoundingClientRect().top + window.scrollY - 150;
-                window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
-              }
+              scrollToSection("shop");
             });
           });
         }}
@@ -153,13 +169,13 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
       />
       <VideoPage/>
       <HistoryPage
-        id="history"
+        id="shop"
         activeCategory={shopCategory}
         onCategoryChange={setShopCategory}
         onViewProduct={(product) => navigate(`/products/${product.id}`)}
       />
       <PujaSlider
-        id="puja"
+        id="online-puja-booking"
         onViewPuja={(puja) => navigate(`/pujas/${puja.id}`)}
         onFeatureProductClick={openFeaturedProduct}
       />

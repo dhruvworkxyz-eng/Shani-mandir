@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import logo from "../images/navd.png";
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { FaChevronDown, FaMagnifyingGlass, FaRightFromBracket, FaUser } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useLanguage } from "../context/LanguageContext";
 import { useProductCatalog } from "../context/ProductCatalogContext";
@@ -29,11 +29,11 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
   const [shopMenuOpen, setShopMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
-  const headerOffset = 150;
   const profileMenuRef = useRef(null);
   const shopMenuRef = useRef(null);
   const searchShellRefs = useRef([]);
   const navigate = useNavigate();
+  const location = useLocation();
   const { user, loading, logout } = useAuth();
   const { products } = useProductCatalog();
   const { t, toggleLanguage, translateCategory } = useLanguage();
@@ -138,14 +138,30 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
-  const handleClick = (index, id) => {
-    setActiveIndex(index);
+  const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const top = element.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const navigateToSection = (index, id) => {
+    setActiveIndex(index);
+    setShopMenuOpen(false);
     setOpen(false);
+    setProfileMenuOpen(false);
+
+    if (location.pathname !== "/") {
+      navigate(`/#${id}`, {
+        state: {
+          sectionId: id,
+        },
+      });
+      return;
+    }
+
+    window.history.replaceState(null, "", `/#${id}`);
+    scrollToSection(id);
   };
 
   const openLoginPage = () => {
@@ -163,13 +179,15 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
     setActiveIndex(1);
     setShopMenuOpen(false);
     setOpen(false);
+    setProfileMenuOpen(false);
 
     if (typeof onOpenShopCategory === "function") {
       onOpenShopCategory(category);
+      window.history.replaceState(null, "", "/#shop");
       return;
     }
 
-    navigate("/", {
+    navigate("/#shop", {
       state: {
         shopCategory: category,
       },
@@ -275,14 +293,18 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
         <div className="hidden min-w-0 md:flex md:justify-center md:px-4 lg:px-6 xl:px-10">
           <nav className="min-w-0">
             <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 font-bold text-sm tracking-wide lg:text-base xl:gap-x-7">
-              <li className={`nav-item text-white cursor-pointer ${activeIndex === 0 ? "text-blue-900" : ""}`} onClick={() => handleClick(0, "home")}>
+              <li className={`nav-item text-white cursor-pointer ${activeIndex === 0 ? "text-blue-900" : ""}`} onClick={() => navigateToSection(0, "home")}>
                 {t("nav.home", "Home")}
               </li>
               <li className={`nav-item relative text-white cursor-pointer ${activeIndex === 1 ? "text-blue-900" : ""}`} ref={shopMenuRef}>
-                <button type="button" className="header-shop-trigger" onClick={() => setShopMenuOpen((current) => !current)}>
-                  <span>{t("nav.shop", "Shop")}</span>
-                  <FaChevronDown className={shopMenuOpen ? "header-chevron header-chevron-open" : "header-chevron"} />
-                </button>
+                <div className="header-shop-trigger">
+                  <button type="button" onClick={() => openShopCategory("Temple Products")}>
+                    <span>{t("nav.shop", "Shop")}</span>
+                  </button>
+                  <button type="button" aria-label={t("nav.shop", "Shop")} onClick={() => setShopMenuOpen((current) => !current)}>
+                    <FaChevronDown className={shopMenuOpen ? "header-chevron header-chevron-open" : "header-chevron"} />
+                  </button>
+                </div>
                 {shopMenuOpen ? (
                   <div className="header-shop-menu">
                     {shopCategories.map((category) => (
@@ -293,16 +315,16 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
                   </div>
                 ) : null}
               </li>
-              <li className={`nav-item text-white cursor-pointer ${activeIndex === 2 ? "text-blue-900" : ""}`} onClick={() => handleClick(2, "puja")}>
+              <li className={`nav-item text-white cursor-pointer ${activeIndex === 2 ? "text-blue-900" : ""}`} onClick={() => navigateToSection(2, "online-puja-booking")}>
                 {t("nav.onlinePuja", "Online Puja Booking")}
               </li>
-              <li className={`nav-item text-white cursor-pointer ${activeIndex === 3 ? "text-blue-900" : ""}`} onClick={() => handleClick(3, "kundali")}>
+              <li className={`nav-item text-white cursor-pointer ${activeIndex === 3 ? "text-blue-900" : ""}`} onClick={() => navigateToSection(3, "kundali")}>
                 {t("nav.kundali", "Kundali")}
               </li>
-              <li className={`nav-item text-white cursor-pointer ${activeIndex === 4 ? "text-blue-900" : ""}`} onClick={() => handleClick(4, "about-mandir")}>
+              <li className={`nav-item text-white cursor-pointer ${activeIndex === 4 ? "text-blue-900" : ""}`} onClick={() => navigateToSection(4, "about-mandir")}>
                 {t("nav.aboutMandir", "About Mandir")}
               </li>
-              <li className={`nav-item text-white cursor-pointer ${activeIndex === 5 ? "text-blue-900" : ""}`} onClick={() => handleClick(5, "contact")}>
+              <li className={`nav-item text-white cursor-pointer ${activeIndex === 5 ? "text-blue-900" : ""}`} onClick={() => navigateToSection(5, "contact")}>
                 {t("nav.contact", "Contact")}
               </li>
             </ul>
@@ -468,14 +490,18 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
               {renderSearchResults(true)}
             </form>
           </li>
-          <li className="nav-item text-white cursor-pointer" onClick={() => handleClick(0, "home")}>
+          <li className="nav-item text-white cursor-pointer" onClick={() => navigateToSection(0, "home")}>
             {t("nav.home", "Home")}
           </li>
           <li className="nav-item text-white cursor-pointer">
-            <button type="button" className="header-mobile-shop-trigger" onClick={() => setShopMenuOpen((current) => !current)}>
-              <span>{t("nav.shop", "Shop")}</span>
-              <FaChevronDown className={shopMenuOpen ? "header-chevron header-chevron-open" : "header-chevron"} />
-            </button>
+            <div className="header-mobile-shop-trigger">
+              <button type="button" onClick={() => openShopCategory("Temple Products")}>
+                <span>{t("nav.shop", "Shop")}</span>
+              </button>
+              <button type="button" aria-label={t("nav.shop", "Shop")} onClick={() => setShopMenuOpen((current) => !current)}>
+                <FaChevronDown className={shopMenuOpen ? "header-chevron header-chevron-open" : "header-chevron"} />
+              </button>
+            </div>
             {shopMenuOpen ? (
               <div className="header-mobile-shop-menu">
                 {shopCategories.map((category) => (
@@ -486,16 +512,16 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
               </div>
             ) : null}
           </li>
-          <li className="nav-item text-white cursor-pointer" onClick={() => handleClick(2, "puja")}>
+          <li className="nav-item text-white cursor-pointer" onClick={() => navigateToSection(2, "online-puja-booking")}>
             {t("nav.onlinePuja", "Online Puja Booking")}
           </li>
-          <li className="nav-item text-white cursor-pointer" onClick={() => handleClick(3, "kundali")}>
+          <li className="nav-item text-white cursor-pointer" onClick={() => navigateToSection(3, "kundali")}>
             {t("nav.kundali", "Kundali")}
           </li>
-          <li className="nav-item text-white cursor-pointer" onClick={() => handleClick(4, "about-mandir")}>
+          <li className="nav-item text-white cursor-pointer" onClick={() => navigateToSection(4, "about-mandir")}>
             {t("nav.aboutMandir", "About Mandir")}
           </li>
-          <li className="nav-item text-white cursor-pointer" onClick={() => handleClick(5, "contact")}>
+          <li className="nav-item text-white cursor-pointer" onClick={() => navigateToSection(5, "contact")}>
             {t("nav.contact", "Contact")}
           </li>
           <li>

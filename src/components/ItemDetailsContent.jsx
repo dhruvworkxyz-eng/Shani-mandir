@@ -124,6 +124,37 @@ const PriceBox = ({ price, oldPrice, discountLabel, taxInfo }) => {
   );
 };
 
+const PriceOptionSelector = ({ options, selectedOption, onSelect }) => {
+  const { t } = useLanguage();
+
+  if (!Array.isArray(options) || !options.length) {
+    return null;
+  }
+
+  return (
+    <div className="item-price-options-card">
+      <span className="item-detail-label">{t("details.selectWeight", "Select Weight")}</span>
+      <div className="item-price-options-row">
+        {options.map((option) => {
+          const isActive = selectedOption?.label === option.label;
+
+          return (
+            <button
+              key={option.label}
+              type="button"
+              className={`item-price-option-btn ${isActive ? "item-price-option-btn-active" : ""}`}
+              onClick={() => onSelect?.(option)}
+            >
+              <strong>{option.label}</strong>
+              <span>Rs. {formatRupees(option.price)}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 const OfferBox = ({ text }) => {
   if (!text) {
     return null;
@@ -274,6 +305,9 @@ const ProductDetailsAccordion = ({ descriptionContent, expandedSections, onToggl
 
 const ProductCommercePanel = ({
   detail,
+  selectedPrice,
+  selectedPriceOption,
+  onSelectPriceOption,
   onAddToCart,
   quantity,
   pincode,
@@ -301,10 +335,16 @@ const ProductCommercePanel = ({
     </div>
 
     <PriceBox
-      price={detail.price}
+      price={selectedPrice}
       oldPrice={detail.oldPrice}
       discountLabel={detail.badge}
       taxInfo={detail.taxInfo}
+    />
+
+    <PriceOptionSelector
+      options={detail.priceOptions}
+      selectedOption={selectedPriceOption}
+      onSelect={onSelectPriceOption}
     />
 
     {detail.priceRangeLabel ? <p className="item-detail-price-range">{detail.priceRangeLabel}</p> : null}
@@ -322,12 +362,14 @@ const ProductCommercePanel = ({
 
     <div className="item-detail-action-grid">
       <QuantitySelector value={quantity} onDecrease={onQuantityDecrease} onIncrease={onQuantityIncrease} />
-      <div className="item-highlight-card">
-        <span className="item-detail-label">{t("details.keyHighlights", "Key Highlights")}</span>
-        <strong>
-          {detail.highlightLabel}: {detail.highlightValue}
-        </strong>
-      </div>
+      {detail.highlightValue ? (
+        <div className="item-highlight-card">
+          <span className="item-detail-label">{t("details.keyHighlights", "Key Highlights")}</span>
+          <strong>
+            {detail.highlightLabel}: {detail.highlightValue}
+          </strong>
+        </div>
+      ) : null}
     </div>
 
     {detail.specifications.length ? (
@@ -406,6 +448,7 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
   const [quantity, setQuantity] = useState(1);
   const [pincode, setPincode] = useState("");
   const [wished, setWished] = useState(false);
+  const [selectedPriceOption, setSelectedPriceOption] = useState(null);
   const [expandedSections, setExpandedSections] = useState({
     description: false,
     shipping: true,
@@ -438,6 +481,7 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
       description: buildDescription(item),
       priceRangeLabel: item.priceRangeLabel || "",
       specifications,
+      priceOptions: Array.isArray(item.priceOptions) ? item.priceOptions : [],
       reviewsLabel: item.reviewsLabel || "Reviews (0)",
       hasExtraProductDetails,
       taxInfo: item.taxInfo || t("details.taxInfo", "Inclusive of all Taxes. GST included. FREE delivery over Rs. 499"),
@@ -445,7 +489,7 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
       marketplaces: Array.isArray(item.marketplaces) && item.marketplaces.length ? item.marketplaces : ["Flipkart", "Amazon"],
       returnPolicy: item.returnPolicy || t("details.returnPolicy", "Easy 10 Day Return & Replacement Available"),
       highlightLabel: item.highlightLabel || t("details.height", "Height"),
-      highlightValue: item.highlightValue || heightSpec?.value || "30 cm",
+      highlightValue: item.highlightValue || heightSpec?.value || "",
       ctaLabel: ctaLabel || (isPuja ? t("details.bookAndPlaceOrder", "Book & Place Order") : t("details.addToCart", "Add to Cart")),
       isPuja,
     };
@@ -459,23 +503,35 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
     setQuantity(1);
     setPincode("");
     setWished(false);
+    setSelectedPriceOption(detail?.priceOptions?.[0] || null);
     setExpandedSections({
       description: false,
       shipping: true,
     });
-  }, [detail?.title]);
+  }, [detail?.priceOptions, detail?.title]);
 
   if (!detail) {
     return null;
   }
+
+  const selectedPrice = selectedPriceOption?.price || detail.price;
 
   const handleAddToCart = (selectedQuantity) => {
     if (typeof onAddToCart !== "function") {
       return;
     }
 
+    const cartItem = selectedPriceOption
+      ? {
+          ...item,
+          price: selectedPriceOption.price,
+          selectedWeight: selectedPriceOption.label,
+          name: `${item.name} (${selectedPriceOption.label})`,
+        }
+      : item;
+
     Array.from({ length: Math.max(1, selectedQuantity) }).forEach(() => {
-      onAddToCart(item);
+      onAddToCart(cartItem);
     });
   };
 
@@ -530,6 +586,9 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
         ) : (
           <ProductCommercePanel
             detail={detail}
+            selectedPrice={selectedPrice}
+            selectedPriceOption={selectedPriceOption}
+            onSelectPriceOption={setSelectedPriceOption}
             onAddToCart={handleAddToCart}
             quantity={quantity}
             pincode={pincode}

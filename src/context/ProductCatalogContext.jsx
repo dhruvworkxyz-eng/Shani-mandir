@@ -19,6 +19,14 @@ const normalizeProduct = (product) => ({
   specifications: Array.isArray(product.specifications) ? product.specifications : [],
   description: product.description || "",
   priceRangeLabel: product.priceRangeLabel || "",
+  priceOptions: Array.isArray(product.priceOptions)
+    ? product.priceOptions
+        .map((option) => ({
+          label: option?.label || "",
+          price: Number(option?.price) || 0,
+        }))
+        .filter((option) => option.label && option.price > 0)
+    : [],
 });
 
 const readStoredCatalog = () => {
