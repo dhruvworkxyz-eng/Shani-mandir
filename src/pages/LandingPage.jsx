@@ -70,10 +70,11 @@ const LandingPage = ({ id, onFeatureProductClick }) => {
       </div>
 
       <div
-        className="absolute md:bottom-[-8px] md:left-[36.5%] md:h-[650px] md:w-[820px] z-10 animate-slideInUp xs:h-[130px] xs:w-[150px] xs:bottom-8 xs:left-[20%]"
+        className="hero-devi-idol absolute bottom-[24px] left-1/2 h-[473px] w-[420px] z-10 sm:bottom-[24px] sm:h-[473px] sm:w-[420px] md:bottom-[-8px] md:h-[610px] md:w-[820px]"
         style={{
           backgroundImage: `url(${devi})`,
           backgroundSize: "contain",
+          backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",
         }}
       ></div>

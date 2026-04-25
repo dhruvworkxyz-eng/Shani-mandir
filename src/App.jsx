@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import PujaDetailPage from "./pages/PujaDetailPage";
+import DonationPage from "./pages/DonationPage";
 import { ProductCatalogProvider } from "./context/ProductCatalogContext";
 import GlobalWhatsAppButton from "./components/GlobalWhatsAppButton";
 
@@ -114,6 +115,17 @@ function App() {
                   path="/pujas/:pujaId"
                   element={
                     <PujaDetailPage
+                      cartItems={cartItems}
+                      addToCart={addToCart}
+                      removeFromCart={removeFromCart}
+                      clearCart={clearCart}
+                    />
+                  }
+                />
+                <Route
+                  path="/donate"
+                  element={
+                    <DonationPage
                       cartItems={cartItems}
                       addToCart={addToCart}
                       removeFromCart={removeFromCart}

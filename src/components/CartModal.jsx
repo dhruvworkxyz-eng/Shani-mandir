@@ -71,6 +71,9 @@ const buildHistoryEntry = ({ cartItems, customer, summary, total, groupedItems, 
     price: item.price,
     image: item.image,
     date: item.date || "",
+    pujaDate: item.pujaDate || "",
+    pujaTime: item.pujaTime || "",
+    pujaMode: item.pujaMode || "",
     kind: item.kind === "puja" ? "puja" : "product",
   })),
   itemCount: cartItems.length,
@@ -101,7 +104,15 @@ const buildWhatsAppOrderMessage = (order) => {
   }
 
   const itemLines = (order.items || [])
-    .map((item) => `- ${item.name} | Qty: ${item.quantity} | Rs. ${Number(item.price || 0) * Number(item.quantity || 0)}`)
+    .map((item) => {
+      const schedule =
+        item.kind === "puja" && (item.pujaDate || item.pujaTime)
+          ? ` | Puja Schedule: ${item.pujaDate || "-"} ${item.pujaTime || ""}`
+          : "";
+      const pujaMode = item.kind === "puja" && item.pujaMode ? ` | Puja Mode: ${item.pujaMode}` : "";
+
+      return `- ${item.name} | Qty: ${item.quantity} | Rs. ${Number(item.price || 0) * Number(item.quantity || 0)}${schedule}${pujaMode}`;
+    })
     .join("\n");
 
   return [
@@ -278,6 +289,9 @@ const CartModal = ({
     setCheckoutOpen(false);
     setMessage({ type: "success", text: t("cart.successPlaced") });
     clearCart?.();
+    window.setTimeout(() => {
+      window.alert(t("cart.orderPlacedPopup", "Item has been ordered. Kindly track it in My Account."));
+    }, 0);
   };
 
   const handlePlaceOrder = async () => {
@@ -469,6 +483,12 @@ const CartModal = ({
                     <div className="cart-modal-item-copy">
                       <strong>{item.name}</strong>
                       <span>{translateCategory(item.category)}</span>
+                      {item.kind === "puja" && (item.pujaDate || item.pujaTime) ? (
+                        <span>{t("details.pujaSchedule", "Puja Schedule")}: {item.pujaDate || "-"} {item.pujaTime || ""}</span>
+                      ) : null}
+                      {item.kind === "puja" && item.pujaMode ? (
+                        <span>{t("details.pujaMode", "Puja Mode")}: {item.pujaMode}</span>
+                      ) : null}
                       <b>{t("cart.qty")} {item.quantity} | Rs. {item.price * item.quantity}</b>
                     </div>
                     <div className="cart-item-actions">

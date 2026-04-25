@@ -5,7 +5,6 @@ import TopBar from "../components/TopBar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CartModal from "../components/CartModal";
-import DonationModal from "../components/DonationModal";
 import AuthModal from "../components/AuthModal";
 import ItemDetailsContent from "../components/ItemDetailsContent";
 import RelatedProductsSlider from "../components/RelatedProductsSlider";
@@ -17,7 +16,6 @@ const PujaDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => 
   const { pujaId } = useParams();
   const navigate = useNavigate();
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [donationModalOpen, setDonationModalOpen] = useState(false);
   const [cartModalOpen, setCartModalOpen] = useState(false);
   const [cartStartInCheckout, setCartStartInCheckout] = useState(false);
 
@@ -32,7 +30,8 @@ const PujaDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => 
     }
 
     const normalizedItem = {
-      id: `puja-${item.id}`,
+      id: `puja-${item.id}-${item.pujaDate || "date"}-${item.pujaTime || "time"}-${item.pujaMode || "Online"}`,
+      sourceId: `puja-${item.id}`,
       name: item.title || item.name,
       category: "Puja Booking",
       price: item.price,
@@ -41,6 +40,9 @@ const PujaDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => 
       rating: item.rating || 5,
       kind: "puja",
       date: item.date,
+      pujaDate: item.pujaDate || "",
+      pujaTime: item.pujaTime || "",
+      pujaMode: item.pujaMode || "Online",
     };
 
     addToCart?.(normalizedItem);
@@ -55,7 +57,7 @@ const PujaDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => 
         <Header
           cartCount={cartItems.length}
           onOpenAuth={() => setAuthModalOpen(true)}
-          onOpenDonation={() => setDonationModalOpen(true)}
+          onOpenDonation={() => navigate("/donate")}
           onOpenCart={() => setCartModalOpen(true)}
         />
         <main className="product-detail-page">
@@ -73,7 +75,6 @@ const PujaDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => 
           onClose={() => setAuthModalOpen(false)}
           onSuccess={() => setAuthModalOpen(false)}
         />
-        <DonationModal isOpen={donationModalOpen} onClose={() => setDonationModalOpen(false)} />
         <CartModal
           isOpen={cartModalOpen}
           cartItems={cartItems}
@@ -94,7 +95,7 @@ const PujaDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => 
       <Header
         cartCount={cartItems.length}
         onOpenAuth={() => setAuthModalOpen(true)}
-        onOpenDonation={() => setDonationModalOpen(true)}
+        onOpenDonation={() => navigate("/donate")}
         onOpenCart={() => {
           setCartStartInCheckout(false);
           setCartModalOpen(true);
@@ -131,7 +132,6 @@ const PujaDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) => 
         onClose={() => setAuthModalOpen(false)}
         onSuccess={() => setAuthModalOpen(false)}
       />
-      <DonationModal isOpen={donationModalOpen} onClose={() => setDonationModalOpen(false)} />
       <CartModal
         isOpen={cartModalOpen}
         cartItems={cartItems}

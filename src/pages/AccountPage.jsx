@@ -10,13 +10,15 @@ import {
 import { useAuth } from "../context/AuthContext";
 import { useLanguage } from "../context/LanguageContext";
 import logo from "../images/navd.png";
-import { getDonationHistory, getOrderHistory } from "../lib/orderHistory";
+import { getAdminOrders, updateAdminOrderStatus } from "../lib/adminOrders";
+import { getDonationHistory, getOrderHistory, subscribeToOrderHistory, updateOrderHistoryEntry } from "../lib/orderHistory";
 
 const AccountPage = () => {
   const { user, logout } = useAuth();
   const { language, t } = useLanguage();
   const navigate = useNavigate();
   const [trackingQuery, setTrackingQuery] = useState("");
+  const [orderHistory, setOrderHistory] = useState(() => getOrderHistory(user?.uid || user?.email));
 
   const displayName = useMemo(() => {
     return user?.displayName?.trim() || user?.email?.split("@")[0] || t("account.devotee");
@@ -57,8 +59,21 @@ const AccountPage = () => {
     });
   }, [language, t, user]);
 
-  const orderHistory = useMemo(() => getOrderHistory(user?.uid || user?.email), [user]);
   const donationHistory = useMemo(() => getDonationHistory(user?.uid || user?.email), [user]);
+
+  useEffect(() => {
+    const historyUserId = user?.uid || user?.email;
+
+    setOrderHistory(getOrderHistory(historyUserId));
+
+    if (!historyUserId) {
+      return undefined;
+    }
+
+    return subscribeToOrderHistory(() => {
+      setOrderHistory(getOrderHistory(historyUserId));
+    });
+  }, [user]);
 
   useEffect(() => {
     if (!trackingQuery.trim() && orderHistory.length > 0) {
@@ -109,6 +124,10 @@ const AccountPage = () => {
   const getTrackingStage = (entry) => {
     const status = String(entry?.status || "").toLowerCase();
 
+    if (status.includes("cancel")) {
+      return 0;
+    }
+
     if (status.includes("deliver") || status.includes("complete")) {
       return 3;
     }
@@ -145,6 +164,60 @@ const AccountPage = () => {
       label,
       state: index < stage ? "completed" : index === stage ? "active" : "pending",
     }));
+  };
+
+  const isCancelledOrder = (entry) => String(entry?.status || "").toLowerCase().includes("cancel");
+
+  const canCancelOrder = (entry) => {
+    if (!entry || entry.items?.some((item) => item.kind === "puja")) {
+      return false;
+    }
+
+    const status = String(entry.status || "").toLowerCase();
+    return !status.includes("cancel") && !status.includes("deliver") && !status.includes("complete") && !status.includes("dispatch") && !status.includes("ship");
+  };
+
+  const getStatusClassName = (status) => {
+    const normalizedStatus = String(status || "").toLowerCase();
+
+    if (normalizedStatus.includes("cancel")) {
+      return "account-history-status account-history-status-cancelled";
+    }
+
+    if (normalizedStatus.includes("deliver") || normalizedStatus.includes("complete")) {
+      return "account-history-status account-history-status-completed";
+    }
+
+    return "account-history-status account-history-status-open";
+  };
+
+  const handleCancelOrder = (entry) => {
+    const historyUserId = user?.uid || user?.email;
+
+    if (!historyUserId || !entry?.orderId || !canCancelOrder(entry)) {
+      return;
+    }
+
+    const shouldCancel = window.confirm(
+      t("account.cancelOrderConfirm", "Do you want to cancel this order?")
+    );
+
+    if (!shouldCancel) {
+      return;
+    }
+
+    const updates = {
+      status: "Cancelled",
+      cancelledAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+
+    updateOrderHistoryEntry(historyUserId, entry.orderId, updates);
+
+    const matchingAdminOrder = getAdminOrders().find((order) => order.orderId === entry.orderId);
+    if (matchingAdminOrder) {
+      updateAdminOrderStatus(entry.orderId, "Cancelled");
+    }
   };
 
   const handleLogout = async () => {
@@ -192,7 +265,7 @@ const AccountPage = () => {
                     <strong>{trackedOrder.orderId}</strong>
                     <span>{formatDateTime(trackedOrder.createdAt)}</span>
                   </div>
-                  <span className="account-history-status">{trackedOrder.status || t("account.confirmed", "Confirmed")}</span>
+                  <span className={getStatusClassName(trackedOrder.status)}>{trackedOrder.status || t("account.confirmed", "Confirmed")}</span>
                 </div>
 
                 <div className="account-track-meta">
@@ -201,25 +274,39 @@ const AccountPage = () => {
                   {trackedOrder.paymentId ? <span>{t("cart.paymentId", "Payment ID")}: {trackedOrder.paymentId}</span> : null}
                 </div>
 
-                <div className="account-track-timeline">
-                  {buildTrackingSteps(trackedOrder).map((step) => (
-                    <div key={step.label} className={`account-track-step account-track-step-${step.state}`}>
-                      <div className="account-track-step-icon">
-                        {step.state === "pending" ? <FaTruckFast /> : <FaCircleCheck />}
+                {isCancelledOrder(trackedOrder) ? (
+                  <div className="account-history-empty account-history-empty-cancelled">
+                    {t("account.cancelledOrderMessage", "This order has been cancelled and will no longer be processed.")}
+                  </div>
+                ) : (
+                  <div className="account-track-timeline">
+                    {buildTrackingSteps(trackedOrder).map((step) => (
+                      <div key={step.label} className={`account-track-step account-track-step-${step.state}`}>
+                        <div className="account-track-step-icon">
+                          {step.state === "pending" ? <FaTruckFast /> : <FaCircleCheck />}
+                        </div>
+                        <div className="account-track-step-copy">
+                          <strong>{step.label}</strong>
+                          <span>
+                            {step.state === "completed"
+                              ? t("account.stepCompleted", "Completed")
+                              : step.state === "active"
+                                ? t("account.stepInProgress", "In progress")
+                                : t("account.stepPending", "Pending")}
+                          </span>
+                        </div>
                       </div>
-                      <div className="account-track-step-copy">
-                        <strong>{step.label}</strong>
-                        <span>
-                          {step.state === "completed"
-                            ? t("account.stepCompleted", "Completed")
-                            : step.state === "active"
-                              ? t("account.stepInProgress", "In progress")
-                              : t("account.stepPending", "Pending")}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
+
+                {canCancelOrder(trackedOrder) ? (
+                  <div className="account-order-actions">
+                    <button type="button" className="account-cancel-order-btn" onClick={() => handleCancelOrder(trackedOrder)}>
+                      {t("account.cancelOrder", "Cancel Order")}
+                    </button>
+                  </div>
+                ) : null}
 
                 <div className="account-history-items">
                   {trackedOrder.items.map((item) => (
@@ -229,6 +316,10 @@ const AccountPage = () => {
                         <span>
                           {item.category}
                           {item.date ? ` - ${item.date}` : ""}
+                          {item.kind === "puja" && (item.pujaDate || item.pujaTime)
+                            ? ` - Puja Schedule: ${item.pujaDate || "-"} ${item.pujaTime || ""}`
+                            : ""}
+                          {item.kind === "puja" && item.pujaMode ? ` - Puja Mode: ${item.pujaMode}` : ""}
                         </span>
                       </div>
                       <b>
@@ -279,7 +370,7 @@ const AccountPage = () => {
                       <strong>{entry.orderId}</strong>
                       <span>{formatDateTime(entry.createdAt)}</span>
                     </div>
-                    <span className="account-history-status">{entry.status || t("account.confirmed", "Confirmed")}</span>
+                    <span className={getStatusClassName(entry.status)}>{entry.status || t("account.confirmed", "Confirmed")}</span>
                   </div>
 
                   <div className="account-history-meta">
@@ -295,6 +386,9 @@ const AccountPage = () => {
                           <span>
                             {item.category}
                             {item.date ? ` • ${item.date}` : ""}
+                            {item.kind === "puja" && (item.pujaDate || item.pujaTime)
+                              ? ` • Puja Schedule: ${item.pujaDate || "-"} ${item.pujaTime || ""}`
+                              : ""}
                           </span>
                         </div>
                         <b>
@@ -303,6 +397,14 @@ const AccountPage = () => {
                       </div>
                     ))}
                   </div>
+
+                  {!isPuja && canCancelOrder(entry) ? (
+                    <div className="account-order-actions">
+                      <button type="button" className="account-cancel-order-btn" onClick={() => handleCancelOrder(entry)}>
+                        {t("account.cancelOrder", "Cancel Order")}
+                      </button>
+                    </div>
+                  ) : null}
                 </article>
               );
             })}

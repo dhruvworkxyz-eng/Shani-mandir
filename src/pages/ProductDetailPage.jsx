@@ -5,7 +5,6 @@ import TopBar from "../components/TopBar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CartModal from "../components/CartModal";
-import DonationModal from "../components/DonationModal";
 import AuthModal from "../components/AuthModal";
 import ItemDetailsContent from "../components/ItemDetailsContent";
 import RelatedProductsSlider from "../components/RelatedProductsSlider";
@@ -18,7 +17,6 @@ const ProductDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) 
   const { productId } = useParams();
   const navigate = useNavigate();
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [donationModalOpen, setDonationModalOpen] = useState(false);
   const [cartModalOpen, setCartModalOpen] = useState(false);
   const [cartStartInCheckout, setCartStartInCheckout] = useState(false);
 
@@ -44,7 +42,7 @@ const ProductDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) 
         <Header
           cartCount={cartItems.length}
           onOpenAuth={() => setAuthModalOpen(true)}
-          onOpenDonation={() => setDonationModalOpen(true)}
+          onOpenDonation={() => navigate("/donate")}
           onOpenCart={() => setCartModalOpen(true)}
         />
         <main className="product-detail-page">
@@ -62,7 +60,6 @@ const ProductDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) 
           onClose={() => setAuthModalOpen(false)}
           onSuccess={() => setAuthModalOpen(false)}
         />
-        <DonationModal isOpen={donationModalOpen} onClose={() => setDonationModalOpen(false)} />
         <CartModal
           isOpen={cartModalOpen}
           cartItems={cartItems}
@@ -83,7 +80,7 @@ const ProductDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) 
       <Header
         cartCount={cartItems.length}
         onOpenAuth={() => setAuthModalOpen(true)}
-        onOpenDonation={() => setDonationModalOpen(true)}
+        onOpenDonation={() => navigate("/donate")}
         onOpenCart={() => {
           setCartStartInCheckout(false);
           setCartModalOpen(true);
@@ -111,7 +108,6 @@ const ProductDetailPage = ({ cartItems, addToCart, removeFromCart, clearCart }) 
         onClose={() => setAuthModalOpen(false)}
         onSuccess={() => setAuthModalOpen(false)}
       />
-      <DonationModal isOpen={donationModalOpen} onClose={() => setDonationModalOpen(false)} />
       <CartModal
         isOpen={cartModalOpen}
         cartItems={cartItems}

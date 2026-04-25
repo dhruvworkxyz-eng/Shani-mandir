@@ -5,6 +5,8 @@ import ganeshaStatue from "../images/ganesha-statue.jpg";
 import greenFluoriteBracelet from "../images/Green Fluorite Bracelet A Round Bead Bracelet.png";
 import haldiKumkumHolder from "../images/haldi-kumkum-holder.jpg";
 import ganeshaWallHanging from "../images/ganesha-wall-hanging.jpg";
+import kamadhenuCowFigurine from "../images/Kamadhenu Cow and Calf Figurine.jpg";
+import kamadhenuCowFigurineAlt from "../images/Kamadhenu-Cow-and-Calf-Figurine-2.webp";
 import labradoriteBracelet from "../images/Labradorite Bracelet A Round Bead Bracelet.png";
 import lotusDiya from "../images/Lotus Diya, Deepak oil lamp.jpg";
 import naturalAuraQuartzBracelet from "../images/Natural Aura Quartz Smokey Quartz Bracelet.png";
@@ -98,8 +100,7 @@ const products = [
       { label: "7.25 Ratti", price: 1500 },
       { label: "8.25 Ratti", price: 2000 },
     ],
-    priceRangeLabel:
-      "4.25 Ratti - Rs. 700 | 5.25 Ratti - Rs. 900 | 6.25 Ratti - Rs. 1,200 | 7.25 Ratti - Rs. 1,500 | 8.25 Ratti - Rs. 2,000",
+    reviewsLabel: "Reviews (0)",
     specifications: [
       { label: "Gemstone", value: "Black Obsidian" },
       { label: "Shape", value: "Oval Cabochon" },
@@ -109,30 +110,25 @@ const products = [
       { label: "Certification", value: "Free lab certification available on request" },
     ],
     description: `Black Obsidian is a powerful natural volcanic gemstone formed from rapidly cooled lava. Known for its deep black color and smooth glossy surface, this stone is widely used in healing crystals, spiritual practices, and jewelry making.
-
 Our Natural Black Obsidian Stone is 100% genuine and carefully polished to enhance its natural shine and beauty. Its elegant black appearance makes it perfect for rings, pendants, bracelets, and decorative crystal collections.
-
 Key Features
-Gemstone: Black Obsidian
-Certification: Lab Certified
+� Gemstone: Black Obsidian
+� Certification: Lab Certified
 Origin: Natural Volcanic Stone
 Color: Deep Jet Black
-Treatment: Natural / Polished
+� Treatment: Natural / Polished
 Usage: Jewelry, Healing Crystals & Spiritual Use
-
 Benefits of Black Obsidian
 Black Obsidian is believed to provide many spiritual and emotional benefits:
-Protection from negative energy
-Promotes mental clarity and focus
-Helps in emotional balance and grounding
-Used in meditation and healing practices
-
+- Protection from negative energy
+- Promotes mental clarity and focus
+- Helps in emotional balance and grounding
+- Used in meditation and healing practices
 Why Choose Our Black Obsidian Stone?
 100% Natural and Genuine Stone
 High Quality Polished Finish
 Deep Black Color and Smooth Texture
 Perfect for Jewelry, Healing & Spiritual Use
-
 Enhance your collection with this beautiful Natural Black Obsidian Stone, a gemstone valued for its protective energy, elegance, and powerful natural beauty.`,
   },
   {
@@ -147,6 +143,7 @@ Enhance your collection with this beautiful Natural Black Obsidian Stone, a gems
     image: naturalRuby390,
     images: [naturalRuby390, naturalRuby390Alt],
     priceRangeLabel: "Rs. 15,600.00 Original price was: Rs. 15,600.00. Rs. 10,452.00 Current price is: Rs. 10,452.00. + Free Shipping",
+    reviewsLabel: "Reviews (0)",
     specifications: [
       { label: "Gemstone", value: "Natural Ruby" },
       { label: "Shape", value: "Oval Cabochon" },
@@ -156,33 +153,27 @@ Enhance your collection with this beautiful Natural Black Obsidian Stone, a gems
       { label: "Certification", value: "Free lab certification available on request" },
     ],
     description: `Experience the power of the Sun with the Natural Ruby (Manik) Gemstone, a highly revered Vedic gemstone associated with Surya (Sun). Known as the king of gemstones, Ruby symbolizes strength, authority, and success, making it ideal for those seeking confidence, recognition, and leadership growth.
-
 This original Ruby stone displays a rich red hue with natural brilliance and clarity. Carefully sourced and certified, it is perfect for astrological use, rings, pendants, and spiritual healing.
-
 Key Benefits:
-- Enhances confidence, courage, and leadership
-- Strengthens Sun (Surya) in horoscope
-- Attracts success, fame, and recognition
-- Boosts energy, vitality, and motivation
-- Protects from negative influences
-
+-  Enhances confidence, courage, and leadership
+-  Strengthens Sun (Surya) in horoscope
+-  Attracts success, fame, and recognition
+-  Boosts energy, vitality, and motivation
+-  Protects from negative influences
 Product Details:
-Gemstone: Natural Ruby (Manik)
-Color: Rich Red
-Form: Loose Gemstone
-Quality: Original / Certified
-Planet: Sun (Surya)
-Usage: Ring, Pendant, Astrology, Healing
-
+- Gemstone: Natural Ruby (Manik)
+- Color: Rich Red
+- Form: Loose Gemstone
+- Quality: Original / Certified
+- Planet: Sun (Surya)
+- Usage: Ring, Pendant, Astrology, Healing
 Who Should Wear:
 Ruby (Manik) is recommended for individuals with a weak Sun placement, or those facing low confidence, lack of authority, or career struggles. It is especially beneficial for professionals, business owners, and leaders.
-
 Why Choose Us:
-- 100% Natural & Authentic Ruby
-- Lab Tested & Certified
-- Energized with Vedic rituals
-- Trusted by Shani Dham Mandir
-
+100% Natural & Authentic Ruby
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
 Care Instructions:
 Clean with a soft cloth and mild soap. Avoid harsh chemicals to maintain its shine and effectiveness.`,
   },
@@ -198,6 +189,7 @@ Clean with a soft cloth and mild soap. Avoid harsh chemicals to maintain its shi
     image: ruby430,
     images: [ruby430, rubyStoneAlt],
     priceRangeLabel: "Rs. 16,000.00 + Free Shipping",
+    reviewsLabel: "Reviews (0)",
     specifications: [
       { label: "Gemstone", value: "Natural Ruby" },
       { label: "Shape", value: "Oval Cabochon" },
@@ -207,34 +199,37 @@ Clean with a soft cloth and mild soap. Avoid harsh chemicals to maintain its shi
       { label: "Certification", value: "Free lab certification available on request" },
     ],
     description: `Boost your confidence, authority, and success with this 4.30 Carat Natural Ruby (Manik) Gemstone, a powerful Vedic stone associated with Surya (Sun). Known as the king of gemstones, Ruby is believed to enhance leadership qualities, attract recognition, and bring positive energy into life.
-
 This original certified Ruby stone features a rich deep red color with natural brilliance and excellent clarity. Carefully sourced and expertly polished, it is ideal for astrological use, rings, pendants, and spiritual healing.
-
 Key Benefits:
-- Enhances confidence, courage, and leadership
-- Strengthens Sun (Surya) in horoscope
-- Attracts success, fame, and recognition
-- Boosts energy, vitality, and motivation
-- Protects from negative influences
-
+-
+Enhances confidence, courage, and leadership
+-
+Strengthens Sun (Surya) in horoscope
+-
+Attracts success, fame, and recognition
+-
+Boosts energy, vitality, and motivation
+-
+Protects from negative influences
 Product Details:
+-
 Gemstone: Natural Ruby (Manik)
+-
 Weight: 4.30 Carat
+-
 Color: Deep Red
+-
 Form: Loose Gemstone
+-
 Quality: Original / Certified
+-
 Planet: Sun (Surya)
+-
 Usage: Ring, Pendant, Astrology, Healing
-
 Who Should Wear:
 Ruby (Manik) is recommended for individuals with a weak Sun placement, or those facing low confidence, lack of recognition, or career struggles. It is especially beneficial for professionals, business owners, and leaders.
-
 Why Choose Us:
-- 100% Natural & Genuine Ruby
-- Lab Tested & Certified
-- Energized with Vedic rituals
-- Trusted by Shani Dham Mandir
-
+100% Natural & Genuine Ruby Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
 Care Instructions:
 Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain its natural shine and effectiveness.`,
   },
@@ -249,6 +244,46 @@ Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain 
     discount: "",
     image: yellowSapphire450,
     images: [yellowSapphire450, yellowSapphire450Alt],
+    taxInfo: "Rs. 11,000.00 + Free Shipping",
+    priceRangeLabel: "Rs. 11,000.00 + Free Shipping",
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Yellow Sapphire (Peela Pukhraj)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.50 Carat (5 Ratti)" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Enhance your life with prosperity, wisdom, and success with this premium 4.50 Carat Yellow Sapphire (Pukhraj). This powerful Jupiter (Guru) gemstone is carefully selected for those seeking financial growth, career success, and positive energy.
+Key Features:
+-  Weight: 4.50 Carat
+-  Stone Type: Natural Yellow Sapphire (Pukhraj)
+-  Certification: Lab Certified & Authentic
+-  Color: Bright Yellow with excellent clarity
+-  Astrological Significance: Associated with Jupiter (Guru)
+Benefits of Yellow Sapphire:
+-  Attracts wealth, prosperity, and financial stability
+-  Boosts career growth and business success
+-  Supports marriage harmony and relationships
+-  Enhances wisdom, confidence, and decision-making
+-  Protects from negative energies
+Who Should Wear:
+- Highly beneficial for Sagittarius & Pisces zodiac signs
+- Ideal for individuals with a weak Jupiter in their horoscope
+- Recommended for those facing career, financial, or marriage delays
+Wearing Method:
+- Wear on Thursday (Day of Jupiter)
+- Best set in Gold
+- Wear on the index finger (right hand)
+- Mantra: "Om Brim Brihaspataye Namah"
+Why Choose This Stone:
+- 100% Natural & Original Yellow Sapphire
+- Lab Certified for authenticity
+- Selected for strong astrological benefits
+- Perfect for personal use or gifting
+Note:
+The effects of gemstones may vary based on individual horoscopes. Consultation with an expert astrologer is recommended for best results.`,
   },
   {
     id: 5,
@@ -261,6 +296,49 @@ Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain 
     discount: "",
     image: yellowSapphire455,
     images: [yellowSapphire455, yellowSapphire455Alt],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Yellow Sapphire (Pukhraj)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.55 Carat" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Invite prosperity, wisdom, and success into your life with this 4.55 Carat Genuine Yellow Sapphire (Pukhraj), a highly auspicious Vedic gemstone associated with Guru (Jupiter). Known for its powerful positive energy, Pukhraj helps attract wealth, enhance knowledge, and bring stability in career and relationships.
+This premium-quality Yellow Sapphire features a bright golden-yellow color with excellent clarity and natural brilliance. Expertly cut and lab-certified, this gemstone is perfect for astrological use, rings, and pendants.
+Key Benefits:
+-
+� Attracts wealth, prosperity, and good fortune
+-
+� Strengthens Jupiter (Guru) in horoscope
+-
+� Enhances wisdom, intelligence, and decision-making
+-
+� Supports marriage harmony and relationships
+-
+� Brings positivity, growth, and success
+Product Details:
+-
+Gemstone: Natural Yellow Sapphire (Pukhraj)
+-
+Weight: 4.55 Carat
+-
+Color: Bright Golden Yellow
+-
+Form: Loose Gemstone
+-
+Quality: Premium / Certified
+-
+Planet: Jupiter (Guru)
+-
+Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+This Pukhraj is ideal for individuals with a weak Jupiter (Guru) or those seeking financial stability, marriage prospects, and career growth. Highly recommended for professionals, students, and business owners.
+Why Choose Us:
+100% Genuine & Natural Pukhraj Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
+Care Instructions:
+Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to preserve its shine and energy.`,
   },
   {
     id: 6,
@@ -273,6 +351,39 @@ Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain 
     discount: "",
     image: ruby465,
     images: [ruby465, ruby465Alt],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Ruby" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.65 Carat (5.06 Ratti)" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Experience the power of the Sun with the Natural Ruby (Manik) Gemstone, a highly revered Vedic gemstone associated with Surya (Sun). Known as the king of gemstones, Ruby symbolizes strength, authority, and success, making it ideal for those seeking confidence, recognition, and leadership growth.
+This original Ruby stone displays a rich red hue with natural brilliance and clarity. Carefully sourced and certified, it is perfect for astrological use, rings, pendants, and spiritual healing.
+Key Benefits:
+-  Enhances confidence, courage, and leadership
+-  Strengthens Sun (Surya) in horoscope
+-  Attracts success, fame, and recognition
+-  Boosts energy, vitality, and motivation
+-  Protects from negative influences
+Product Details:
+- Gemstone: Natural Ruby (Manik)
+- Color: Rich Red
+- Form: Loose Gemstone
+- Quality: Original / Certified
+- Planet: Sun (Surya)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Ruby (Manik) is recommended for individuals with a weak Sun placement, or those facing low confidence, lack of authority, or career struggles. It is especially beneficial for professionals, business owners, and leaders.
+Why Choose Us:
+100% Natural & Authentic Ruby
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with a soft cloth and mild soap. Avoid harsh chemicals to maintain its shine and effectiveness.`,
   },
   {
     id: 7,
@@ -285,6 +396,49 @@ Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain 
     discount: "",
     image: ruby490,
     images: [ruby490, ruby490Alt],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Ruby" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.90 Carat (5.34 Ratti)" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Boost your confidence, authority, and success with this 4.90 Carat Natural Ruby (Manik) Gemstone, a powerful Vedic stone associated with Surya (Sun). Known as the king of gemstones, Ruby is believed to enhance leadership qualities, attract recognition, and bring positive energy into life.
+This original certified Ruby stone features a rich deep red color with natural brilliance and excellent clarity. Carefully sourced and expertly polished, it is ideal for astrological use, rings, pendants, and spiritual healing.
+Key Benefits:
+-
+Enhances confidence, courage, and leadership
+-
+Strengthens Sun (Surya) in horoscope
+-
+Attracts success, fame, and recognition
+-
+Boosts energy, vitality, and motivation
+-
+Protects from negative influences
+Product Details:
+-
+Gemstone: Natural Ruby (Manik)
+-
+Weight: 4.90 Carat
+-
+Color: Deep Red
+-
+Form: Loose Gemstone
+-
+Quality: Original / Certified
+-
+Planet: Sun (Surya)
+-
+Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Ruby (Manik) is recommended for individuals with a weak Sun placement, or those facing low confidence, lack of recognition, or career struggles. It is especially beneficial for professionals, business owners, and leaders.
+Why Choose Us:
+100% Natural & Genuine Ruby Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
+Care Instructions:
+Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain its natural shine and effectiveness.`,
   },
   {
     id: 8,
@@ -297,6 +451,49 @@ Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain 
     discount: "",
     image: ruby505,
     images: [ruby505, ruby505Alt],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Ruby" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "5.05 Carat (5.50 Ratti)" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Boost your confidence, authority, and success with this 5.05 Carat Natural Ruby (Manik) Gemstone, a powerful Vedic stone associated with Surya (Sun). Known as the king of gemstones, Ruby is believed to enhance leadership qualities, attract recognition, and bring positive energy into life.
+This original certified Ruby stone features a rich deep red color with natural brilliance and excellent clarity. Carefully sourced and expertly polished, it is ideal for astrological use, rings, pendants, and spiritual healing.
+Key Benefits:
+-
+Enhances confidence, courage, and leadership
+-
+Strengthens Sun (Surya) in horoscope
+-
+Attracts success, fame, and recognition
+-
+Boosts energy, vitality, and motivation
+-
+Protects from negative influences
+Product Details:
+-
+Gemstone: Natural Ruby (Manik)
+-
+Weight: 5.05 Carat
+-
+Color: Deep Red
+-
+Form: Loose Gemstone
+-
+Quality: Original / Certified
+-
+Planet: Sun (Surya)
+-
+Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Ruby (Manik) is recommended for individuals with a weak Sun placement, or those facing low confidence, lack of recognition, or career struggles. It is especially beneficial for professionals, business owners, and leaders.
+Why Choose Us:
+100% Natural & Genuine Ruby Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
+Care Instructions:
+Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain its natural shine and effectiveness.`,
   },
   {
     id: 9,
@@ -309,6 +506,49 @@ Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain 
     discount: "",
     image: ruby540,
     images: [ruby540, ruby540Alt],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Ruby" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "5.40 Carat (5.90 Ratti)" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Boost your confidence, authority, and success with this 5.40 Carat Natural Ruby (Manik) Gemstone, a powerful Vedic stone associated with Surya (Sun). Known as the king of gemstones, Ruby is believed to enhance leadership qualities, attract recognition, and bring positive energy into life.
+This original certified Ruby stone features a rich deep red color with natural brilliance and excellent clarity. Carefully sourced and expertly polished, it is ideal for astrological use, rings, pendants, and spiritual healing.
+Key Benefits:
+-
+Enhances confidence, courage, and leadership
+-
+Strengthens Sun (Surya) in horoscope
+-
+Attracts success, fame, and recognition
+-
+Boosts energy, vitality, and motivation
+-
+Protects from negative influences
+Product Details:
+-
+Gemstone: Natural Ruby (Manik)
+-
+Weight: 5.40 Carat
+-
+Color: Deep Red
+-
+Form: Loose Gemstone
+-
+Quality: Original / Certified
+-
+Planet: Sun (Surya)
+-
+Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Ruby (Manik) is recommended for individuals with a weak Sun placement, or those facing low confidence, lack of recognition, or career struggles. It is especially beneficial for professionals, business owners, and leaders.
+Why Choose Us:
+100% Natural & Genuine Ruby Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
+Care Instructions:
+Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to maintain its natural shine and effectiveness.`,
   },
   {
     id: 10,
@@ -1564,6 +1804,32 @@ Ideal for Kalash Sthapana, Abhishek, Navratri Puja, and Diwali rituals, it serve
     image: lotusDiya,
   },
   {
+    id: 82,
+    name: "Kamadhenu Cow and Calf Figurine",
+    category: "Temple Products",
+    price: 499,
+    oldPrice: 699,
+    rating: 4.8,
+    sale: true,
+    discount: "29% OFF",
+    image: kamadhenuCowFigurine,
+    images: [kamadhenuCowFigurine, kamadhenuCowFigurineAlt],
+    specifications: [
+      { label: "Product Name", value: "Kamadhenu Cow and Calf Figurine" },
+      { label: "SKU", value: "TP-001" },
+      { label: "Material", value: "German Silver figurine with silver or gold coating" },
+      { label: "Design", value: "Kamadhenu with calf Nandini symbolizing purity, blessings, and abundance" },
+      { label: "Placement", value: "Ideal for pooja mandir, living room, office desk, or spiritual decor corners" },
+      { label: "Use", value: "Ideal for daily pooja, festive decor, gifting, and return favors" },
+      { label: "Care Instructions", value: "Clean gently with soft cloth or pitambri; avoid harsh chemicals" },
+    ],
+    description: `Bring divine blessings, peace, and prosperity into your home with this beautifully handcrafted Kamadhenu Cow and Calf Figurine. Symbolizing purity and abundance, Kamadhenu, the sacred wish-fulfilling cow from Samudra Manthan, is revered in every Indian household as the giver of health, wealth, and success.
+
+According to Vastu Shastra, placing the Kamadhenu with her calf, Nandini, in your home or pooja mandir invites positive energy, prosperity, and harmony. This elegant German Silver figurine, coated in silver or gold, adds a divine charm and traditional appeal to any space - be it your living room, pooja altar, or office desk.
+
+An ideal piece for spiritual decor and a thoughtful return gift for weddings, anniversaries, housewarmings, and corporate events, this Kamadhenu statue radiates sacred beauty and auspicious energy wherever it is placed.`,
+  },
+  {
     id: 42,
     name: "Cats Eye Ketu Yantra Pendant - Natural Lehsunia Gemstone Locket",
     category: "Stone Yantra Pendant",
@@ -2121,8 +2387,47 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: yellowSapphire545,
     images: [yellowSapphire545],
-    description:
-      "Certified yellow sapphire (Pukhraj) selected for devotees seeking guru blessings, prosperity, and spiritual clarity.",
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Yellow Sapphire (Peela Pukhraj)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "5.45 Carat (5.94 Ratti)" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Bring prosperity, wisdom, and success into your life with the Certified Yellow Sapphire (Pukhraj), a highly auspicious Vedic gemstone associated with Guru (Jupiter). Known for its strong positive influence, Pukhraj is believed to attract wealth, enhance knowledge, and promote harmony in relationships.
+This premium-quality Yellow Sapphire features a vibrant yellow to golden hue with excellent clarity and natural brilliance. Carefully selected and lab-certified, it is ideal for astrological use, rings, pendants, and spiritual purposes.
+Key Benefits:
+-
+� Attracts wealth, prosperity, and good fortune
+-
+� Strengthens Jupiter (Guru) in horoscope
+-
+� Enhances wisdom, knowledge, and decision-making
+-
+� Supports marriage harmony and relationships
+-
+� Promotes positivity and spiritual growth
+Product Details:
+-
+Gemstone: Natural Yellow Sapphire (Pukhraj)
+-
+Color: Bright Yellow / Golden Yellow
+-
+Form: Loose Gemstone
+-
+Quality: Premium / Certified
+-
+Planet: Jupiter (Guru)
+-
+Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Yellow Sapphire (Pukhraj) is recommended for individuals with a weak Jupiter (Guru) or those seeking financial growth, marriage stability, and career success. It is especially beneficial for students, professionals, and business owners.
+Why Choose Us:
+100% Natural & Authentic Pukhraj Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with mild soap and a soft cloth. Avoid exposure to harsh chemicals to maintain its shine and effectiveness.`,
   },
   {
     id: 54,
@@ -2135,8 +2440,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: blackAgateStone,
     images: [blackAgateStone],
-    description:
-      "Naturall Black Agte Stone - Shani Mandir\nPrice range: Rs. 1,300 to Rs. 2,100",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1300 },
+      { label: "5.25 Ratti", price: 1500 },
+      { label: "6.25 Ratti", price: 1700 },
+      { label: "7.25 Ratti", price: 1900 },
+      { label: "8.25 Ratti", price: 2100 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Black Agate (Kala Hakik)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Black Agate, also known as Kala Hakik Stone, is a powerful gemstone known for its deep black color, smooth texture, and protective energy. It is widely used in astrology, spiritual practices, and jewelry making.
+Our Natural Black Agate Stone is 100% genuine and lab certified, carefully selected for its rich black color and fine polish. Its elegant and bold appearance makes it perfect for rings, pendants, bracelets, and spiritual use.
+Key Features
+� Gemstone: Natural Black Agate (Kala Hakik)
+� Certification: Lab Certified
+Origin: Natural Stone
+Color: Deep Black
+� Treatment: Natural / Polished
+Usage: Ideal for Rings, Pendants, Bracelets & Spiritual Use
+Astrological Benefits
+In Vedic astrology, Black Agate (Hakik) is believed to provide:
+- Protection from negative energies
+- Strength and courage
+- Mental stability and focus
+- Relief from stress and anxiety
+Why Choose Our Black Agate Stone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Deep Black Color & Smooth Finish
+Perfect for Astrology, Healing & Jewelry
+Add strength and protection to your life with this beautiful Natural Black Agate (Kala Hakik) Stone, ideal for astrological benefits and stylish jewelry designs. �`,
   },
   {
     id: 55,
@@ -2149,8 +2489,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: amethystStone,
     images: [amethystStone],
-    description:
-      "Amethyst Stone - Shani Dham Mandir\nPrice range: Rs. 900 to Rs. 2,500",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 900 },
+      { label: "5.25 Ratti", price: 1300 },
+      { label: "6.25 Ratti", price: 1600 },
+      { label: "7.25 Ratti", price: 1900 },
+      { label: "8.25 Ratti", price: 2500 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Amethyst (Jamunia Stone)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Amethyst, also known as Jamunia Stone, is a beautiful purple gemstone known for its deep violet color, brilliance, and calming energy. This gemstone is widely used in astrology, healing practices, and elegant jewelry designs.
+Our Natural Amethyst Stone is 100% genuine and lab certified, carefully selected for its rich purple color and excellent clarity. The gemstone is finely polished to highlight its natural beauty, making it ideal for rings, pendants, bracelets, and other jewelry pieces.
+Key Features
+� Gemstone: Natural Amethyst (Jamunia)
+� Certification: Lab Certified
+Origin: Natural Earth Mined Stone
+Color: Deep Purple / Violet
+� Treatment: Natural / Polished
+Usage: Ideal for Rings, Pendants & Jewelry
+Astrological Benefits
+In Vedic astrology, Amethyst (Jamunia) is often associated with the planet Saturn (Shani) and is believed to provide:
+- Protection from negative energies
+- Mental peace and emotional balance
+- Improved focus and spiritual awareness
+- Strength and stability in life
+Why Choose Our Amethyst Stone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Beautiful Deep Purple Color
+Perfect for Astrology and Jewelry
+Add elegance and positive energy to your life with this beautiful Natural Amethyst Gemstone, perfect for astrological benefits and stylish jewelry designs. �`,
   },
   {
     id: 56,
@@ -2163,8 +2538,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: emeraldStone,
     images: [emeraldStone],
-    description:
-      "Green Onyx Stone - Shani Dham Mandir\nPrice range: Rs. 350 to Rs. 1,150",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 350 },
+      { label: "5.25 Ratti", price: 550 },
+      { label: "6.25 Ratti", price: 750 },
+      { label: "7.25 Ratti", price: 950 },
+      { label: "8.25 Ratti", price: 1150 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Green Onyx" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Green Onyx is a beautiful gemstone known for its rich green color, smooth texture, and natural shine. This gemstone is highly popular in fashion jewelry and spiritual use because of its attractive appearance and calming energy.
+Our Natural Green Onyx Stone is 100% genuine and lab certified, carefully selected for its deep green color and excellent polish. The gemstone is perfect for creating rings, pendants, bracelets, and other stylish jewelry pieces.
+Key Features
+� Gemstone: Natural Green Onyx
+� Certification: Lab Certified
+Origin: Natural Stone
+Color: Rich Deep Green
+� Treatment: Natural / Polished
+Usage: Ideal for Rings, Pendants & Jewelry
+Benefits of Green Onyx
+Green Onyx is believed to bring several positive benefits:
+- Promotes mental strength and confidence
+- Helps improve focus and decision making
+- Encourages emotional balance and calmness
+- Attracts success and positive energy
+Why Choose Our Green Onyx Stone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Beautiful Deep Green Color
+Perfect for Jewelry and Daily Wear
+Enhance your jewelry collection with this beautiful Natural Green Onyx Gemstone, known for its elegant appearance and calming energy.`,
   },
   {
     id: 57,
@@ -2177,6 +2587,17 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: greenObsidianStone,
     images: [greenObsidianStone],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Green Gemstone" },
+      { label: "Natural Stone", value: "Yes" },
+      { label: "Shape", value: "Oval / Round Cabochon" },
+      { label: "Weight", value: "Anyone" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+    ],
+    description: `Natural Green Obsidian is a rare and captivating volcanic glass, prized for its rich emerald-to-bottle-green color. Formed when iron- and magnesium-rich lava cools rapidly, this striking gem is primarily sourced from Mexico's Pachuca region and select U.S. locations. Unlike black obsidian, its vibrant green hue ranges from deep forest to translucent sea-green, often revealing a mesmerizing golden or rainbow sheen when tilted in light.
+Spiritually, Green Obsidian is revered as a powerful heart-chakra stone. Known as the "Stone of Truth," it gently dissolves emotional blockages, releases old traumas, and encourages self-honesty and compassion. It acts as an energetic shield, absorbing negativity while promoting deep cleansing and personal growth. Many use it to heal heartbreak, detoxify the aura, and foster emotional resilience.`,
   },
   {
     id: 58,
@@ -2189,8 +2610,36 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: blueTopazStone,
     images: [blueTopazStone],
-    description:
-      "Blue Topaz Stone\nPrice range: Rs. 1,200 to Rs. 2,400",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1200 },
+      { label: "5.25 Ratti", price: 1500 },
+      { label: "6.25 Ratti", price: 1800 },
+      { label: "7.25 Ratti", price: 2100 },
+      { label: "8.25 Ratti", price: 2400 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Lapis Lazuli (Lajvart)" },
+      { label: "Shape", value: "Oval / Round Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 9.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Natural Blue Topaz Stone - 100% Genuine, Untreated & Certified
+100% natural untreated blue topaz gemstone - no heat, no irradiation. Pure sky blue to London blue shade with excellent clarity and brilliant cut. Comes with full lab certificate (IGI/GRS equivalent) for authenticity.
+Key Features:
+- Completely untreated & natural
+- Eye-clean to VVS clarity
+- December birthstone
+- Hardness 8 - durable for daily wear
+Astrological Benefits (Vedic):
+- Boosts communication & self-expression
+- Brings mental clarity, wisdom & focus
+- Attracts prosperity, success & good fortune
+- Calms mind, reduces stress & anxiety
+- Supports Jupiter (Guru) energy
+Ideal for jewellery (rings, pendants), astrology remedies, or healing.`,
   },
   {
     id: 59,
@@ -2203,8 +2652,47 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: burmeseRubyStone,
     images: [burmeseRubyStone],
-    description:
-      "Burmese Ruby - Shani Dham Mandir\nPrice range: Rs. 22,000 to Rs. 49,000",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 22000 },
+      { label: "5.25 Ratti", price: 26000 },
+      { label: "6.25 Ratti", price: 34000 },
+      { label: "7.25 Ratti", price: 41000 },
+      { label: "8.25 Ratti", price: 49000 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Ruby Burmese" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Enhance your confidence, power, and success with the Natural Burmese Ruby (Manik) Gemstone, a highly valuable Vedic gemstone associated with Surya (Sun). Known as the king of gemstones, Ruby is believed to boost leadership qualities, attract fame, and bring authority and recognition in life.
+This premium-quality Burmese Ruby features a deep rich red color with excellent brilliance and natural glow. Sourced from Burma (Myanmar), known for producing the finest rubies in the world, this gemstone is perfect for astrological use, rings, and pendants.
+Key Benefits:
+-  Enhances confidence, leadership, and authority
+-  Attracts success, fame, and recognition
+-  Strengthens Sun (Surya) in horoscope
+-  Improves vitality, energy, and motivation
+-  Protects from negative influences
+Product Details:
+- Gemstone: Natural Ruby (Manik)
+- Origin: Burma (Myanmar)
+- Color: Deep Blood Red
+- Form: Loose Gemstone
+- Quality: Premium / Certified
+- Planet: Sun (Surya)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Ruby (Manik) is recommended for individuals with a weak Sun in their horoscope, or those seeking confidence, leadership growth, and career success. Best worn after proper astrological consultation.
+Why Choose Us:
+100% Natural & Original Burmese Ruby
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with mild soap and a soft cloth. Avoid harsh chemicals to maintain its brilliance.`,
   },
   {
     id: 60,
@@ -2217,8 +2705,47 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: emeraldStone,
     images: [emeraldStone],
-    description:
-      "Emerald Stone - Shani Dham Mandir\nPrice range: Rs. 3,500 to Rs. 5,500",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 3500 },
+      { label: "5.25 Ratti", price: 4000 },
+      { label: "6.25 Ratti", price: 4500 },
+      { label: "7.25 Ratti", price: 5000 },
+      { label: "8.25 Ratti", price: 5500 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Emerald" },
+      { label: "Shape", value: "Rectangle Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Unlock intelligence, communication, and prosperity with the Natural Brazilian Emerald (Panna), a powerful Vedic gemstone associated with Budh (Mercury). Known for enhancing wisdom, creativity, and business success, Panna is highly recommended for those seeking mental clarity and growth in career or education.
+This premium Zambian Emerald features a rich deep green color with excellent natural texture and brilliance. Sourced from Zambia, one of the world's most renowned sources of emeralds, this gemstone offers a perfect balance of beauty and astrological power.
+Key Benefits:
+- � Enhances intelligence, memory, and communication skills
+- � Strengthens Mercury (Budh) in horoscope
+- � Boosts business growth and financial success
+- � Improves decision-making and analytical thinking
+- � Brings peace, balance, and positive energy
+Product Details:
+- Gemstone: Natural Emerald (Panna)
+- Origin: Brazilian
+- Color: Rich Deep Green
+- Form: Loose Gemstone
+- Quality: Premium / Certified
+- Planet: Mercury (Budh)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Emerald (Panna) is ideal for individuals facing communication issues, weak memory, business losses, or weak Mercury placement in their horoscope. It is especially beneficial for students, traders, and professionals.
+Why Choose Us:
+100% Natural & Original Zambian Emerald
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with a soft cloth and avoid exposure to harsh chemicals or extreme heat to maintain its natural beauty.`,
   },
   {
     id: 61,
@@ -2231,8 +2758,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: burmeseRubyStone,
     images: [burmeseRubyStone],
-    description:
-      "Garnet Stone - Shani Dham Mandir\nPrice range: Rs. 1,200 to Rs. 3,900",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1200 },
+      { label: "5.25 Ratti", price: 1700 },
+      { label: "6.25 Ratti", price: 2300 },
+      { label: "7.25 Ratti", price: 3200 },
+      { label: "8.25 Ratti", price: 3900 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "American Zircon" },
+      { label: "Shape", value: "Round" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Garnet Stone is a deep red and beautiful gemstone known for its rich color, brilliance, and natural energy. This gemstone has been admired for centuries and is widely used in astrology and fine jewelry.
+Our Natural Garnet Stone is 100% genuine, lab certified, and carefully selected for its deep red color and excellent clarity. Its elegant appearance makes it perfect for rings, pendants, bracelets, and other jewelry designs.
+Key Features
+� Gemstone: Natural Garnet
+� Certification: Lab Certified
+Type: Natural Earth Mined Stone
+Color: Deep Red / Wine Red
+� Treatment: Untreated / Natural
+Usage: Ideal for Rings, Pendants & Jewelry
+Astrological Benefits
+In Vedic astrology, Garnet (Raktamani) is believed to provide:
+- Increased confidence and courage
+- Positive energy and protection
+- Growth in career and success
+- Emotional balance and strength
+Why Choose Our Garnet Stone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Rich Color and Brilliant Shine
+Perfect for Astrology and Jewelry
+Add elegance and strength to your life with this beautiful Natural Garnet Gemstone, ideal for astrological use and stylish jewelry.`,
   },
   {
     id: 62,
@@ -2245,8 +2807,46 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: pearlMotiStone,
     images: [pearlMotiStone],
-    description:
-      "Natural Genuine Pearl (Moti) Gemstone\nPrice range: Rs. 1,600 to Rs. 3,900",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1600 },
+      { label: "5.25 Ratti", price: 2100 },
+      { label: "6.25 Ratti", price: 2700 },
+      { label: "7.25 Ratti", price: 3200 },
+      { label: "8.25 Ratti", price: 3900 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Pearl (Moti)" },
+      { label: "Shape", value: "Round" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Experience calmness and emotional harmony with the Natural Pearl (Moti) Gemstone, a powerful Vedic stone associated with Chandra (Moon). Known for its soothing energy, Moti helps in balancing emotions, enhancing mental peace, and bringing positivity into life.
+This premium-quality Pearl stone showcases a beautiful creamy white luster with a smooth, elegant surface. Carefully selected and certified, it is ideal for astrological use, rings, pendants, or spiritual healing.
+Key Benefits:
+- � Promotes mental peace and emotional stability
+- � Reduces stress, anxiety, and anger
+- � Strengthens relationships and love
+- � Enhances confidence and inner calm
+- � Improves sleep and overall well-being
+Product Details:
+- Gemstone: Natural Pearl (Moti)
+- Color: White / Creamy
+- Form: Loose Gemstone
+- Quality: Premium / Certified
+- Planet: Moon (Chandra)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Pearl (Moti) is ideal for individuals facing emotional imbalance, stress, anger issues, or weak Moon (Chandra Dosha) in their horoscope. It is especially beneficial for enhancing peace of mind and emotional strength.
+Why Choose Us:
+100% Natural & Authentic Pearl
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Keep away from perfumes and chemicals. Clean gently with a soft cloth to maintain its natural shine.`,
   },
   {
     id: 63,
@@ -2259,8 +2859,47 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: hessoniteGomedStone,
     images: [hessoniteGomedStone],
-    description:
-      "Hessonite Gomed - Shani Dham Mandir\nPrice range: Rs. 2,100 to Rs. 4,200",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 2100 },
+      { label: "5.25 Ratti", price: 2400 },
+      { label: "6.25 Ratti", price: 3100 },
+      { label: "7.25 Ratti", price: 3600 },
+      { label: "8.25 Ratti", price: 4200 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Hessonite Gomed" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Unlock powerful cosmic energy with the Natural Hessonite (Gomed) Gemstone, a highly effective Vedic stone associated with Rahu Graha. Known for its strong astrological impact, Gomed is believed to protect against negative energies, remove confusion, and bring clarity, success, and stability in life.
+This premium-quality Gomed stone features a rich honey-brown to reddish-orange color with excellent transparency and brilliance. Carefully sourced and precisely cut, it is ideal for astrological use, rings, and pendants.
+Key Benefits:
+- � Reduces negative effects of Rahu (Rahu Dosha)
+- � Brings mental clarity and sharp decision-making
+- � Protects from hidden enemies and negativity
+- � Improves financial stability and career growth
+- � Helps in overcoming fear, anxiety, and confusion
+Product Details:
+- Gemstone: Natural Hessonite (Gomed)
+- Color: Honey Brown / Reddish Orange
+- Form: Loose Gemstone
+- Quality: Premium / Certified
+- Origin: Natural
+- Planet: Rahu
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Gomed is recommended for individuals facing Rahu Mahadasha / Antardasha, or those dealing with confusion, delays, sudden losses, or mental stress. It is best worn after proper astrological consultation.
+Why Choose Us:
+100% Natural & Original Gomed Stone
+Lab Tested & Certified
+Energized with Vedic Mantras
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with a soft cloth and keep away from chemicals to maintain its shine and effectiveness.`,
   },
   {
     id: 64,
@@ -2273,8 +2912,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: ioliteStone,
     images: [ioliteStone],
-    description:
-      "Natural Iolite Stone - Shani Mandir\nPrice range: Rs. 1,200 to Rs. 3,200",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1200 },
+      { label: "5.25 Ratti", price: 1700 },
+      { label: "6.25 Ratti", price: 2200 },
+      { label: "7.25 Ratti", price: 2700 },
+      { label: "8.25 Ratti", price: 3200 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Iolite (Kaka Neeli)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Iolite, also known as Kaka Neeli Stone, is a beautiful gemstone admired for its deep blue to violet color and natural brilliance. This gemstone is widely used in astrology and fine jewelry, offering a unique and elegant look.
+Our Natural Iolite Stone is 100% genuine and lab certified, carefully selected for its rich color, clarity, and premium quality. The stone is finely polished to enhance its shine, making it perfect for rings, pendants, bracelets, and designer jewelry.
+Key Features
+� Gemstone: Natural Iolite (Neeli)
+� Certification: Lab Certified
+Origin: Natural Earth Mined Stone
+Color: Blue to Violet
+� Treatment: Natural / Polished
+Usage: Ideal for Rings, Pendants & Jewelry
+Astrological Benefits
+In Vedic astrology, Iolite (Neeli) is associated with the planet Saturn (Shani) and is believed to provide:
+- Mental clarity and focus
+- Career growth and financial stability
+- Protection from negative energies
+- Improved decision-making ability
+Why Choose Our Iolite Stone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Rich Blue-Violet Color
+Perfect for Astrology and Jewelry
+Enhance your style and energy with this beautiful Natural Iolite Gemstone, perfect for astrological benefits and elegant jewelry designs. �`,
   },
   {
     id: 65,
@@ -2287,8 +2961,47 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: zambianEmeraldStone,
     images: [zambianEmeraldStone],
-    description:
-      "Natural Zambian Emerald (Panna) - Certified Premium Gemstone\nPrice range: Rs. 12,000 to Rs. 24,000",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 12000 },
+      { label: "5.25 Ratti", price: 15000 },
+      { label: "6.25 Ratti", price: 18000 },
+      { label: "7.25 Ratti", price: 21000 },
+      { label: "8.25 Ratti", price: 24000 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Zambian Emerald (Panna)" },
+      { label: "Shape", value: "Square Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Unlock intelligence, communication, and prosperity with the Natural Zambian Emerald (Panna), a powerful Vedic gemstone associated with Budh (Mercury). Known for enhancing wisdom, creativity, and business success, Panna is highly recommended for those seeking mental clarity and growth in career or education.
+This premium Zambian Emerald features a rich deep green color with excellent natural texture and brilliance. Sourced from Zambia, one of the world's most renowned sources of emeralds, this gemstone offers a perfect balance of beauty and astrological power.
+Key Benefits:
+- � Enhances intelligence, memory, and communication skills
+- � Strengthens Mercury (Budh) in horoscope
+- � Boosts business growth and financial success
+- � Improves decision-making and analytical thinking
+- � Brings peace, balance, and positive energy
+Product Details:
+- Gemstone: Natural Emerald (Panna)
+- Origin: Zambia
+- Color: Rich Deep Green
+- Form: Loose Gemstone
+- Quality: Premium / Certified
+- Planet: Mercury (Budh)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Emerald (Panna) is ideal for individuals facing communication issues, weak memory, business losses, or weak Mercury placement in their horoscope. It is especially beneficial for students, traders, and professionals.
+Why Choose Us:
+100% Natural & Original Zambian Emerald
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with a soft cloth and avoid exposure to harsh chemicals or extreme heat to maintain its natural beauty.`,
   },
   {
     id: 66,
@@ -2301,8 +3014,36 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: americanZirconStone,
     images: [americanZirconStone],
-    description:
-      "American Zircon - Shani Mandir\nPrice range: Rs. 900 to Rs. 2,500",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 900 },
+      { label: "5.25 Ratti", price: 1200 },
+      { label: "6.25 Ratti", price: 1500 },
+      { label: "7.25 Ratti", price: 2000 },
+      { label: "8.25 Ratti", price: 2500 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "American Zircon" },
+      { label: "Shape", value: "Round" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `American Zircon is a bright and sparkling gemstone famous for its diamond-like shine and attractive appearance. This gemstone is widely used in luxury jewelry designs because of its brilliant reflection and crystal-clear look.
+Our American Zircon gemstone is carefully selected and lab certified to ensure authenticity and premium quality. The stone is finely polished to give it a high sparkle and smooth finish, making it perfect for rings, pendants, earrings, and designer jewelry.
+Product Highlights
+� Stone Name: American Zircon
+� Certification: Lab Tested / Certified
+Quality: Premium Shine & Clarity
+Type: Genuine Loose Gemstone
+Best For: Rings, Pendants, Earrings & Custom Jewelry
+Why Buy American Zircon?
+- Attractive diamond-like sparkle
+- Perfect for fashion and luxury jewelry
+- Affordable alternative to diamonds
+- Suitable for daily wear jewelry
+This beautiful American Zircon gemstone is an excellent choice for anyone looking for a stylish, brilliant, and elegant stone to enhance their jewelry collection.`,
   },
   {
     id: 67,
@@ -2315,8 +3056,46 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: blueSapphireGemstone,
     images: [blueSapphireGemstone],
-    description:
-      "Blue Sapphire Stone - Shani Dham Mandir\nPrice range: Rs. 3,000 to Rs. 7,000",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 3000 },
+      { label: "5.25 Ratti", price: 4000 },
+      { label: "6.25 Ratti", price: 5000 },
+      { label: "7.25 Ratti", price: 6000 },
+      { label: "8.25 Ratti", price: 7000 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Blue Sapphire (Neelam)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Experience fast-acting results and powerful protection with the Natural Blue Sapphire (Neelam) Stone, one of the most influential Vedic gemstones associated with Shani (Saturn). Known for its instant impact, Neelam is believed to bring success, wealth, discipline, and protection from negative energies.
+This premium-quality Blue Sapphire showcases a deep royal blue color with exceptional clarity and brilliance. Carefully sourced and certified, it is ideal for astrological use, rings, and pendants.
+Key Benefits:
+- � Provides rapid success and financial growth
+- � Strengthens Saturn (Shani) in horoscope
+- � Protects from negativity and bad luck
+- � Enhances focus, discipline, and decision-making
+- � Brings stability in career and life
+Product Details:
+- Gemstone: Natural Blue Sapphire (Neelam)
+- Color: Deep Royal Blue
+- Form: Loose Gemstone
+- Quality: Premium / Certified
+- Planet: Saturn (Shani)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Blue Sapphire (Neelam) is recommended for individuals going through Shani Sade Sati, Dhaiya, or those facing career struggles, delays, or financial instability. It should be worn only after proper astrological consultation due to its strong effects.
+Why Choose Us:
+100% Natural & Authentic Neelam
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean gently with a soft cloth. Avoid harsh chemicals and store safely to maintain its brilliance and energy.`,
   },
   {
     id: 68,
@@ -2329,8 +3108,46 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: lapisLazuliStone,
     images: [lapisLazuliStone],
-    description:
-      "Lapis Lazuali Stone - Shani Mandir\nPrice range: Rs. 900 to Rs. 2,000",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 900 },
+      { label: "5.25 Ratti", price: 1100 },
+      { label: "6.25 Ratti", price: 1300 },
+      { label: "7.25 Ratti", price: 1600 },
+      { label: "8.25 Ratti", price: 2000 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Lapis Lazuli (Lajvart)" },
+      { label: "Shape", value: "Oval / Round Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 9.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Natural Lapis Lazuli is a beautiful deep blue gemstone known for its powerful spiritual energy and rich royal appearance. This stunning stone has been valued for thousands of years for its connection to wisdom, truth, and inner peace.
+The deep blue color with natural golden flecks makes Lapis Lazuli one of the most unique and attractive gemstones in the world. Many people believe that this stone helps enhance clarity of mind, strengthen intuition, and bring positive energy into life.
+This certified natural Lapis Lazuli gemstone is carefully polished to highlight its natural beauty and energy. It is commonly used for astrology, meditation, healing practices, jewelry making, and spiritual growth.
+Lapis Lazuli is also known as a stone of wisdom, confidence, and communication, helping the wearer express thoughts clearly and maintain emotional balance.
+Key Benefits of Lapis Lazuli Stone
+• Enhances wisdom, knowledge, and mental clarity
+• Supports spiritual growth and meditation
+• Helps improve communication and confidence
+• Brings positive energy and emotional balance
+• Protects against negative energies
+Product Features
+• Gemstone Name: Natural Lapis Lazuli
+• Color: Deep Royal Blue with Golden Pyrite Specks
+• Quality: Premium Natural Stone
+• Shape: Smooth Polished Oval
+• Certification: Government Lab Certified
+• Origin: Natural Mineral Stone
+Who Should Use Lapis Lazuli?
+Lapis Lazuli is often recommended for people who want to improve their focus, communication skills, confidence, and spiritual awareness. It is widely used by astrologers, healers, and meditation practitioners.
+How to Use
+• Wear as a ring or pendant
+• Keep during meditation or prayer
+• Place on your work desk for clarity and focus
+• Use in spiritual healing practices`,
   },
   {
     id: 69,
@@ -2343,8 +3160,47 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: mozambiqueRubyStone,
     images: [mozambiqueRubyStone],
-    description:
-      "Mozambique African Stone - Shani Dham Mandir\nPrice range: Rs. 1,200 to Rs. 4,000",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1200 },
+      { label: "5.25 Ratti", price: 2000 },
+      { label: "6.25 Ratti", price: 2900 },
+      { label: "7.25 Ratti", price: 3500 },
+      { label: "8.25 Ratti", price: 4000 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Mozambique Ruby" },
+      { label: "Shape", value: "Rectangle Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Boost your confidence, power, and success with the Original Mozambique Ruby (Manik) Gemstone, a powerful Vedic stone associated with Surya (Sun). Known for its vibrant red color and strong astrological benefits, this gemstone helps enhance leadership qualities, attract recognition, and bring positivity into life.
+This premium Mozambique Ruby features a beautiful rich red to slightly pinkish-red hue with excellent shine and clarity. Sourced from Mozambique, one of the world's leading ruby origins, this gemstone offers both beauty and powerful energy, making it perfect for astrological use, rings, and pendants.
+Key Benefits:
+-  Enhances confidence, authority, and leadership
+-  Strengthens Sun (Surya) in horoscope
+-  Attracts success, fame, and career growth
+-  Boosts energy, vitality, and motivation
+-  Protects from negativity and obstacles
+Product Details:
+- Gemstone: Natural Ruby (Manik)
+- Origin: Mozambique
+- Color: Rich Red / Pinkish Red
+- Form: Loose Gemstone
+- Quality: Original / Certified
+- Planet: Sun (Surya)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Ruby (Manik) is ideal for individuals facing low confidence, lack of recognition, or weak Sun placement in their horoscope. It is especially beneficial for professionals, leaders, and those seeking growth and authority.
+Why Choose Us:
+100% Natural & Original Mozambique Ruby
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean gently with mild soap and a soft cloth. Avoid harsh chemicals to preserve its shine and natural energy.`,
   },
   {
     id: 70,
@@ -2357,8 +3213,51 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: redCoralStone,
     images: [redCoralStone],
-    description:
-      "Original Red Coral Stone - Natural Moonga Certified Gemstone - Shani Dham Mandir",
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Coral" },
+      { label: "Shape", value: "Capsule Cabochon" },
+      { label: "Weight Range", value: "5.25 Carat (5.72 Ratti)" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Strengthen your courage, energy, and success with the Original Red Coral (Moonga) Stone, a powerful Vedic gemstone associated with Mangal (Mars). Known for its strong protective and energizing properties, Moonga helps boost confidence, remove obstacles, and bring stability in life.
+This natural certified Red Coral comes in a smooth capsule shape, featuring a vibrant red color with a polished surface and excellent finish. Carefully sourced and lab-tested, it is ideal for astrological use, rings, pendants, and spiritual purposes.
+Key Benefits:
+-
+Enhances courage, confidence, and strength
+-
+Strengthens Mars (Mangal) in horoscope
+-
+Removes obstacles, delays, and negativity
+-
+Supports career growth and financial stability
+-
+Improves physical energy and determination
+Product Details:
+-
+Gemstone: Natural Red Coral (Moonga)
+-
+Weight: 5.72 Ratti
+-
+Shape: Capsule Shape
+-
+Color: Vibrant Red
+-
+Form: Loose Gemstone
+-
+Quality: Original / Certified
+-
+Planet: Mars (Mangal)
+-
+Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Red Coral (Moonga) is recommended for individuals with a weak Mars (Mangal) or those facing fear, low confidence, health issues, or delays in work. It is especially beneficial for professionals, athletes, and business persons.
+Why Choose Us:
+100% Natural & Original Moonga Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
+Care Instructions:
+Avoid contact with chemicals, perfumes, and heat. Clean gently with a soft cloth to maintain its shine and effectiveness.`,
   },
   {
     id: 71,
@@ -2371,8 +3270,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: whiteTopazStone,
     images: [whiteTopazStone],
-    description:
-      "White Topaz - Shani Mandir\nPrice range: Rs. 1,500 to Rs. 3,100",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1500 },
+      { label: "5.25 Ratti", price: 1800 },
+      { label: "6.25 Ratti", price: 2100 },
+      { label: "7.25 Ratti", price: 2400 },
+      { label: "8.25 Ratti", price: 3100 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "White Topaz" },
+      { label: "Shape", value: "Oval / Round Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 9.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `White Topaz is a beautiful and highly valued natural gemstone known for its brilliant sparkle and crystal-clear appearance. This gemstone is widely used in astrology and jewelry and is believed to bring clarity, positivity, and success to the wearer.
+Our Natural White Topaz Stone is 100% genuine, lab-certified, and untreated, ensuring the highest level of authenticity and quality. Its stunning shine makes it a perfect choice for rings, pendants, bracelets, and other fine jewelry.
+Key Features
+- � Gemstone: Natural White Topaz
+- � Certification: Lab Certified
+-  Origin: Natural Earth Mined Stone
+-  Clarity: Excellent Transparency & Brilliant Shine
+- � Treatment: Untreated / Natural
+-  Usage: Perfect for Rings, Pendants & Jewelry
+Astrological Benefits
+In Vedic astrology, White Topaz is often associated with the planet Venus (Shukra). It is believed to help enhance:
+- Love and relationships
+- Financial prosperity
+- Creativity and confidence
+- Mental clarity and positive energy
+Why Choose Our White Topaz?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Premium Quality Shine and Cut
+Ideal for Astrology and Jewelry
+Bring elegance and positive energy into your life with this beautiful Natural White Topaz Gemstone, perfect for both astrological purposes and stylish jewelry designs.`,
   },
   {
     id: 72,
@@ -2385,8 +3319,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: citrineSunelaStone,
     images: [citrineSunelaStone],
-    description:
-      "Citrine Sunela Stone - Shani Mandir\nPrice range: Rs. 1,500 to Rs. 2,500",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1500 },
+      { label: "5.25 Ratti", price: 1700 },
+      { label: "6.25 Ratti", price: 1900 },
+      { label: "7.25 Ratti", price: 2100 },
+      { label: "8.25 Ratti", price: 2500 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Citrine (Sunela Stone)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Citrine, also known as Sunela Stone, is a bright and attractive gemstone recognized for its golden yellow color and natural shine. This gemstone is widely used in astrology and jewelry, and is considered a symbol of success, positivity, and prosperity.
+Our Natural Citrine (Sunela) Stone is 100% genuine and lab certified, carefully selected for its rich yellow color, clarity, and brilliance. It is finely polished to enhance its natural beauty, making it perfect for rings, pendants, bracelets, and designer jewelry.
+Key Features
+� Gemstone: Natural Citrine (Sunela)
+� Certification: Lab Certified
+Origin: Natural Earth Mined Stone
+Color: Golden Yellow / Light Yellow
+� Treatment: Natural / Polished
+Usage: Ideal for Rings, Pendants & Jewelry
+Astrological Benefits
+In Vedic astrology, Citrine (Sunela) is associated with the planet Jupiter (Guru) and is believed to bring:
+- Financial growth and success
+- Positive energy and confidence
+- Wisdom and decision-making ability
+- Prosperity in business and career
+Why Choose Our Citrine Stone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Bright Yellow Color with Excellent Shine
+Perfect for Astrology and Jewelry
+Add brightness and success to your life with this beautiful Natural Citrine (Sunela) Gemstone, ideal for astrological benefits and elegant jewelry designs. �`,
   },
   {
     id: 73,
@@ -2399,8 +3368,52 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: tigerEyeLooseStone,
     images: [tigerEyeLooseStone],
-    description:
-      "Tiger Eye Loose Stone - Shani Dham Mandir\nPrice range: Rs. 1,300 to Rs. 2,100",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1300 },
+      { label: "5.25 Ratti", price: 1500 },
+      { label: "6.25 Ratti", price: 1700 },
+      { label: "7.25 Ratti", price: 1900 },
+      { label: "8.25 Ratti", price: 2100 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Tiger Eye Stone" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Unlock strength, confidence, and protection with this Premium Tiger Eye Loose Gemstone. Known for its powerful grounding energy, Tiger Eye is a highly valued stone that helps boost courage, attract wealth, and protect against negative energies.
+Key Features:
+-  Stone Type: Natural Tiger Eye
+-  Quality: Premium Grade
+-  Form: Loose Gemstone
+-  Color: Golden Brown with natural chatoyancy effect
+-  Finish: Smooth & Polished
+-  Authenticity: 100% Genuine Stone
+Benefits of Tiger Eye:
+-  Protects from negative energy and evil eye
+- � Enhances confidence, courage, and willpower
+-  Attracts wealth, success, and financial growth
+-  Improves focus, clarity, and decision-making
+- ⚖ Balances emotions and stabilizes mood
+Who Should Use:
+- Individuals seeking confidence and protection
+- People facing fear, stress, or decision issues
+- Ideal for business owners, professionals, and students
+- Suitable for daily wear or meditation purposes
+Usage:
+- Can be used for rings, pendants, or bracelets
+- Keep in pocket or workspace for positive energy
+- Clean regularly to maintain energy and shine
+Why Choose This Gemstone:
+- 100% Natural & Premium Quality
+- Carefully selected for best energy and appearance
+- Ideal for both astrological and healing purposes
+- Perfect for personal use or gifting
+Note:
+As a natural gemstone, slight variations in color and texture may occur. Results and effects may vary from person to person.`,
   },
   {
     id: 74,
@@ -2413,6 +3426,18 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: sulemaniHakikStone,
     images: [sulemaniHakikStone],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Obsidian (सुलेमानी अकीक)" },
+      { label: "Natural Stone", value: "Yes" },
+      { label: "Shape", value: "Oval / Round Cabochon" },
+      { label: "Weight", value: "Anyone" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+    ],
+    description: `Discover the legendary power of authentic Sulemani Akik (Real Black Obsidian), also known as Kaala Hakik or Sulemani Aqeeq. Hand-selected from finest volcanic sources, this deep jet-black gemstone features a stunning mirror-like glassy luster and natural sheen that captivates instantly.
+Revered for centuries as the stone of Hazrat Suleman (AS), Sulemani Hakik is the strongest shield against evil eye (nazar), black magic (jadu-tona), psychic attacks, and negative energies. It removes fear, anxiety, and depression while boosting courage, confidence, mental clarity, and decision-making power. Astrologers strongly recommend it for Shani Sade Sati, Rahu-Ketu dosha, and overall protection.
+Perfect for men's silver rings, pendants, lockets, taweez, bracelets, or astrological remedies. Available in smooth oval/round cabochon cut, 5 to 30+ ratti, completely natural and untreated.`,
   },
   {
     id: 75,
@@ -2425,8 +3450,24 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: tigerEyeLooseStone,
     images: [tigerEyeLooseStone],
-    description:
-      "Tiger Eye Gemstone\nPrice range: Rs. 500 to Rs. 900",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 500 },
+      { label: "5.25 Ratti", price: 600 },
+      { label: "6.25 Ratti", price: 700 },
+      { label: "7.25 Ratti", price: 800 },
+      { label: "8.25 Ratti", price: 900 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Tiger Eye (शेर की आँख / सुलेमानी अकीक)" },
+      { label: "Shape", value: "Oval / Round Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 9.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Feel the raw energy of the wild with this breathtaking 100% Natural Tiger Eye Gemstone! Watch in awe as its golden-brown silk flashes with a hypnotic chatoyant "Cat's Eye" effect that dances like a real tiger's gaze under the light - pure magic in every turn!
+Nicknamed the "Stone of Courage" and "Protector's Stone", Tiger Eye is your ultimate shield against negativity, evil eye, and self-doubt. It ignites unshakable confidence, sharpens focus, and awakens fearless leadership - the perfect power stone for winners!`,
   },
   {
     id: 76,
@@ -2439,8 +3480,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: moonstoneGemstone,
     images: [moonstoneGemstone],
-    description:
-      "Certified Moonstone - Shani Dham Mandir\nPrice range: Rs. 400 to Rs. 1,100",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 400 },
+      { label: "5.25 Ratti", price: 500 },
+      { label: "6.25 Ratti", price: 700 },
+      { label: "7.25 Ratti", price: 800 },
+      { label: "8.25 Ratti", price: 1100 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Moonstone" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Moonstone, also known as Chandrakant Mani, is a beautiful gemstone admired for its soft glow and unique moon-like shine (adularescence). This gemstone has a mystical appearance that makes it highly popular in astrology and elegant jewelry designs.
+Our Natural Moonstone Gemstone is 100% genuine and lab certified, carefully selected for its milky white glow and smooth surface. The stone is finely polished to highlight its natural shine, making it perfect for rings, pendants, bracelets, and designer jewelry.
+Key Features
+� Gemstone: Natural Moonstone
+� Certification: Lab Certified
+Origin: Natural Earth Mined Stone
+Color: Milky White with Blue Shine
+� Treatment: Natural / Polished
+Usage: Ideal for Rings, Pendants & Jewelry
+Astrological Benefits
+In Vedic astrology, Moonstone (Chandrakant Mani) is associated with the Moon (Chandra) and is believed to bring:
+- Emotional balance and calmness
+- Mental peace and positive energy
+- Improved intuition and creativity
+- Harmony in relationships and family life
+Why Choose Our Moonstone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Beautiful Natural Moon Glow
+Perfect for Astrology and Jewelry
+Add elegance and peaceful energy to your life with this beautiful Natural Moonstone Gemstone, perfect for astrological benefits and stylish jewelry designs.`,
   },
   {
     id: 77,
@@ -2453,8 +3529,54 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: opalStone,
     images: [opalStone],
-    description:
-      "Opal Stone - Shani Dham Mandir\nPrice range: Rs. 15,000 to Rs. 34,000",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 15000 },
+      { label: "5.25 Ratti", price: 18000 },
+      { label: "6.25 Ratti", price: 23000 },
+      { label: "7.25 Ratti", price: 29000 },
+      { label: "8.25 Ratti", price: 34000 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Opal (Dhudiya Pather)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Enhance love, creativity, and luxury in your life with the Natural Opal Stone, a powerful and beautiful gemstone associated with Shukra (Venus). Known for its mesmerizing play of colors, Opal symbolizes passion, attraction, and artistic expression.
+This original certified Opal gemstone displays a stunning mix of rainbow flashes with a milky or transparent base, making each stone unique and highly आकर्षक. Carefully sourced and lab-tested, it is ideal for astrological use, rings, pendants, and healing purposes.
+Key Benefits:
+-
+Attracts love, romance, and relationships
+-
+Enhances creativity and artistic skills
+-
+Strengthens Venus (Shukra) in horoscope
+-
+Brings luxury, comfort, and financial growth
+-
+Improves charm, confidence, and personality
+Product Details:
+-
+Gemstone: Natural Opal
+-
+Color: Multicolor Play / Milky Base
+-
+Form: Loose Gemstone
+-
+Quality: Original / Certified
+-
+Planet: Venus (Shukra)
+-
+Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Opal is recommended for individuals facing relationship issues, lack of creativity, or weak Venus placement in their horoscope. It is especially beneficial for artists, designers, and those in creative or luxury-related fields.
+Why Choose Us:
+100% Natural & Authentic Opal Lab Tested & Certified Energized with Vedic rituals Trusted by Shani Dham Mandir
+Care Instructions:
+Avoid exposure to heat and harsh chemicals. Clean gently with a soft cloth to preserve its natural shine and color play.`,
   },
   {
     id: 78,
@@ -2467,6 +3589,16 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: naturalRedSandStone,
     images: [naturalRedSandStone],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Red Sand Gemstone" },
+      { label: "Natural Stone", value: "Yes" },
+      { label: "Shape", value: "Oval / Round Cabochon" },
+      { label: "Weight", value: "Anyone" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+    ],
+    description: `The Natural Red Sand Gemstone, also called Crimson Desert Jasper or Blood-Sand Chalcedony, is a breathtaking, 100% natural red gemstone mined only from ancient desert basins in Western Australia and Namibia. Its fiery blood-red to burnt-sienna color comes from iron oxides that stained prehistoric sand dunes millions of years ago, creating dramatic flowing patterns that look like wind-blown desert sands frozen in crystal.`,
   },
   {
     id: 79,
@@ -2479,8 +3611,46 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: naturalRuby390,
     images: [naturalRuby390, naturalRuby390Alt],
-    description:
-      "Natural Ruby Stone - Shani Dham Mandir\nPrice range: Rs. 1,500 to Rs. 3,500",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 1500 },
+      { label: "5.25 Ratti", price: 1800 },
+      { label: "6.25 Ratti", price: 2500 },
+      { label: "7.25 Ratti", price: 3000 },
+      { label: "8.25 Ratti", price: 3500 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Natural Ruby" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Experience the power of the Sun with the Natural Ruby (Manik) Gemstone, a highly revered Vedic gemstone associated with Surya (Sun). Known as the king of gemstones, Ruby symbolizes strength, authority, and success, making it ideal for those seeking confidence, recognition, and leadership growth.
+This original Ruby stone displays a rich red hue with natural brilliance and clarity. Carefully sourced and certified, it is perfect for astrological use, rings, pendants, and spiritual healing.
+Key Benefits:
+-  Enhances confidence, courage, and leadership
+-  Strengthens Sun (Surya) in horoscope
+-  Attracts success, fame, and recognition
+-  Boosts energy, vitality, and motivation
+-  Protects from negative influences
+Product Details:
+- Gemstone: Natural Ruby (Manik)
+- Color: Rich Red
+- Form: Loose Gemstone
+- Quality: Original / Certified
+- Planet: Sun (Surya)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Ruby (Manik) is recommended for individuals with a weak Sun placement, or those facing low confidence, lack of authority, or career struggles. It is especially beneficial for professionals, business owners, and leaders.
+Why Choose Us:
+100% Natural & Authentic Ruby
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with a soft cloth and mild soap. Avoid harsh chemicals to maintain its shine and effectiveness.`,
   },
   {
     id: 80,
@@ -2493,8 +3663,43 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: turquoiseStone,
     images: [turquoiseStone],
-    description:
-      "Natural Turquoise Gemstone - Shani Dham Mandir\nPrice range: Rs. 2,000 to Rs. 6,000",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 2000 },
+      { label: "5.25 Ratti", price: 3000 },
+      { label: "6.25 Ratti", price: 4000 },
+      { label: "7.25 Ratti", price: 5000 },
+      { label: "8.25 Ratti", price: 6000 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Turquoise (Firoza)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, bracelets, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Turquoise, also known as Firoza Stone, is a stunning gemstone famous for its unique sky-blue to greenish-blue color and natural beauty. This gemstone has been valued for centuries and is widely used in astrology, jewelry, and spiritual practices.
+Our Natural Turquoise Gemstone is 100% genuine, lab-certified, and carefully selected for its rich color and smooth texture. Its elegant appearance makes it ideal for rings, pendants, bracelets, and designer jewelry.
+Key Features
+� Gemstone: Natural Turquoise (Firoza)
+� Certification: Lab Certified
+Origin: Natural Earth Mined Stone
+Color: Sky Blue / Blue-Green
+� Treatment: Natural / Polished
+Usage: Perfect for Rings, Pendants & Jewelry
+Astrological Benefits
+In Vedic astrology, Turquoise (Firoza) is believed to bring:
+- Protection from negative energies
+- Success and good fortune
+- Peace of mind and emotional balance
+- Growth in career and business opportunities
+Why Choose Our Turquoise Gemstone?
+100% Natural & Genuine Stone
+Lab Tested and Certified
+Beautiful Sky Blue Color
+Perfect for Astrology and Jewelry
+Add elegance and positive energy to your life with this beautiful Natural Turquoise (Firoza) Gemstone, perfect for astrological use and stylish jewelry designs.`,
   },
   {
     id: 81,
@@ -2507,8 +3712,46 @@ This Surya Yantra locket is ideal for individuals facing weak Sun placement in t
     discount: "",
     image: yellowSapphireStone,
     images: [yellowSapphireStone],
-    description:
-      "Yellow Sapphire Stone - Shani Dham Mandir\nPrice range: Rs. 800 to Rs. 3,600",
+    priceOptions: [
+      { label: "4.25 Ratti", price: 800 },
+      { label: "5.25 Ratti", price: 1400 },
+      { label: "6.25 Ratti", price: 2000 },
+      { label: "7.25 Ratti", price: 2600 },
+      { label: "8.25 Ratti", price: 3600 },
+    ],
+    reviewsLabel: "Reviews (0)",
+    specifications: [
+      { label: "Gemstone", value: "Yellow Sapphire (Pukhraj)" },
+      { label: "Shape", value: "Oval Cabochon" },
+      { label: "Weight Range", value: "4.25 Ratti - 8.25 Ratti" },
+      { label: "Product Type", value: "Loose Gemstone (Unmounted)" },
+      { label: "Suitable For", value: "Rings, pendants, or astrological remedies" },
+      { label: "Certification", value: "Free lab certification available on request" },
+    ],
+    description: `Bring prosperity, wisdom, and good fortune into your life with the Natural Yellow Sapphire (Pukhraj), a highly auspicious Vedic gemstone associated with Guru (Jupiter). Known for its positive energy, Pukhraj is believed to attract wealth, success, and marital harmony while enhancing knowledge and spiritual growth.
+This premium-quality Yellow Sapphire features a vibrant yellow to golden hue with excellent clarity and natural brilliance. Carefully sourced and lab-certified, it is ideal for astrological use, rings, pendants, and spiritual purposes.
+Key Benefits:
+- � Attracts wealth, prosperity, and good luck
+- � Strengthens Jupiter (Guru) in horoscope
+- � Enhances wisdom, knowledge, and decision-making
+- � Supports marriage, relationships, and harmony
+- � Promotes spiritual growth and positivity
+Product Details:
+- Gemstone: Natural Yellow Sapphire (Pukhraj)
+- Color: Bright Yellow / Golden Yellow
+- Form: Loose Gemstone
+- Quality: Premium / Certified
+- Planet: Jupiter (Guru)
+- Usage: Ring, Pendant, Astrology, Healing
+Who Should Wear:
+Yellow Sapphire (Pukhraj) is recommended for individuals with a weak Jupiter (Guru) or those seeking financial growth, marriage prospects, and career success. It is especially beneficial for teachers, students, and professionals.
+Why Choose Us:
+100% Natural & Authentic Pukhraj
+Lab Tested & Certified
+Energized with Vedic rituals
+Trusted by Shani Dham Mandir
+Care Instructions:
+Clean with mild soap and a soft cloth. Avoid harsh chemicals to maintain its shine and effectiveness.`,
   },
 ];
 

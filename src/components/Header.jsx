@@ -296,7 +296,12 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
               <li className={`nav-item text-white cursor-pointer ${activeIndex === 0 ? "text-blue-900" : ""}`} onClick={() => navigateToSection(0, "home")}>
                 {t("nav.home", "Home")}
               </li>
-              <li className={`nav-item relative text-white cursor-pointer ${activeIndex === 1 ? "text-blue-900" : ""}`} ref={shopMenuRef}>
+              <li
+                className={`nav-item relative text-white cursor-pointer ${activeIndex === 1 ? "text-blue-900" : ""}`}
+                ref={shopMenuRef}
+                onMouseEnter={() => setShopMenuOpen(true)}
+                onMouseLeave={() => setShopMenuOpen(false)}
+              >
                 <div className="header-shop-trigger">
                   <button type="button" onClick={() => openShopCategory("Temple Products")}>
                     <span>{t("nav.shop", "Shop")}</span>
@@ -385,26 +390,6 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
                         Admin Dashboard
                       </button>
                     ) : null}
-                    <button type="button" className="header-profile-menu-item header-profile-menu-item-secondary" onClick={() => openAccountSection("#track-order")}>
-                      <FaUser />
-                      {t("account.trackOrderTitle", "Track Order")}
-                    </button>
-                    <button type="button" className="header-profile-menu-item header-profile-menu-item-secondary" onClick={() => openAccountSection("#order-history")}>
-                      <FaUser />
-                      {t("account.orderHistoryTitle", "Order History")}
-                    </button>
-                    <button type="button" className="header-profile-menu-item header-profile-menu-item-secondary" onClick={() => openAccountSection("#temple-donation-history")}>
-                      <FaUser />
-                      {t("account.donationHistoryLabel", "Donation History")}
-                    </button>
-                    <button type="button" className="header-profile-menu-item header-profile-menu-item-secondary" onClick={() => openAccountSection("#puja-history")}>
-                      <FaUser />
-                      {t("account.pujaHistoryTitle", "Puja History")}
-                    </button>
-                    <button type="button" className="header-profile-menu-item header-profile-menu-item-secondary" onClick={() => openAccountSection("#temple-donation-history")}>
-                      <FaUser />
-                      {t("account.donationHistoryTitle", "Temple Donation History")}
-                    </button>
                     <button type="button" className="header-profile-menu-item" onClick={handleLogout}>
                       <FaRightFromBracket />
                       {t("nav.logout", "Logout")}
@@ -551,26 +536,6 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
                     Admin Dashboard
                   </button>
                 ) : null}
-                <button type="button" className="mobile-account-btn" onClick={() => openAccountSection("#track-order")}>
-                  <FaUser />
-                  {t("account.trackOrderTitle", "Track Order")}
-                </button>
-                <button type="button" className="mobile-account-btn" onClick={() => openAccountSection("#order-history")}>
-                  <FaUser />
-                  {t("account.orderHistoryTitle", "Order History")}
-                </button>
-                <button type="button" className="mobile-account-btn" onClick={() => openAccountSection("#temple-donation-history")}>
-                  <FaUser />
-                  {t("account.donationHistoryLabel", "Donation History")}
-                </button>
-                <button type="button" className="mobile-account-btn" onClick={() => openAccountSection("#puja-history")}>
-                  <FaUser />
-                  {t("account.pujaHistoryTitle", "Puja History")}
-                </button>
-                <button type="button" className="mobile-account-btn" onClick={() => openAccountSection("#temple-donation-history")}>
-                  <FaUser />
-                  {t("account.donationHistoryTitle", "Temple Donation History")}
-                </button>
                 <button type="button" className="header-profile-menu-item" onClick={handleLogout}>
                   <FaRightFromBracket />
                   {t("nav.logout", "Logout")}

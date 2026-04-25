@@ -16,7 +16,7 @@ const defaultFormState = {
   discount: "",
 };
 
-const orderStatuses = ["All", "Confirmed", "Preparing Order", "Dispatched", "Delivered"];
+const orderStatuses = ["All", "Confirmed", "Preparing Order", "Dispatched", "Delivered", "Cancelled"];
 
 const AdminPage = () => {
   const { user } = useAuth();
@@ -37,7 +37,10 @@ const AdminPage = () => {
       products: products.length,
       orders: orders.length,
       revenue,
-      pending: orders.filter((order) => !String(order.status || "").toLowerCase().includes("deliver")).length,
+      pending: orders.filter((order) => {
+        const status = String(order.status || "").toLowerCase();
+        return !status.includes("deliver") && !status.includes("cancel");
+      }).length,
     };
   }, [orders, products.length]);
 
@@ -384,6 +387,10 @@ const AdminPage = () => {
                         <span>{item.name}</span>
                         <span>
                           Qty {item.quantity} | Rs. {Number(item.price || 0).toLocaleString("en-IN")}
+                          {item.kind === "puja" && (item.pujaDate || item.pujaTime)
+                            ? ` | Puja Schedule: ${item.pujaDate || "-"} ${item.pujaTime || ""}`
+                            : ""}
+                          {item.kind === "puja" && item.pujaMode ? ` | Puja Mode: ${item.pujaMode}` : ""}
                         </span>
                       </div>
                     ))}

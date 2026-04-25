@@ -1,3 +1,5 @@
+import { buildApiUrl } from "./api";
+
 const ADMIN_ORDER_STORAGE_KEY = "temple-admin-orders";
 const ADMIN_ORDER_EVENT = "temple-admin-orders-updated";
 
@@ -30,6 +32,26 @@ const writeOrders = (orders) => {
 
 export const getAdminOrders = () => readOrders();
 
+export const refreshAdminOrders = async () => {
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  try {
+    const response = await fetch(buildApiUrl("/api/orders"));
+    if (!response.ok) {
+      throw new Error("Unable to load backend orders.");
+    }
+
+    const data = await response.json();
+    const orders = Array.isArray(data.orders) ? data.orders : [];
+    writeOrders(orders);
+    return orders;
+  } catch {
+    return readOrders();
+  }
+};
+
 export const appendAdminOrder = (order) => {
   if (!order) {
     return;
@@ -37,6 +59,14 @@ export const appendAdminOrder = (order) => {
 
   const currentOrders = readOrders();
   writeOrders([order, ...currentOrders]);
+
+  fetch(buildApiUrl("/api/orders"), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ order }),
+  }).catch(() => {});
 };
 
 export const updateAdminOrderStatus = (orderId, status) => {
@@ -52,6 +82,14 @@ export const updateAdminOrderStatus = (orderId, status) => {
   );
 
   writeOrders(nextOrders);
+
+  fetch(buildApiUrl(`/api/orders/${encodeURIComponent(orderId)}`), {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ status }),
+  }).catch(() => {});
 };
 
 export const subscribeToAdminOrders = (callback) => {

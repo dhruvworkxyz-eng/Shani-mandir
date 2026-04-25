@@ -4,7 +4,6 @@ import {
   FaBoxOpen,
   FaCircleCheck,
   FaHeart,
-  FaLocationDot,
   FaMinus,
   FaPlus,
   FaRegHeart,
@@ -12,6 +11,7 @@ import {
   FaStar,
   FaTruckFast,
 } from "react-icons/fa6";
+import SafeCheckout from "./SafeCheckout";
 import { useLanguage } from "../context/LanguageContext";
 
 const formatRupees = (value) => {
@@ -106,6 +106,23 @@ const renderSpecList = (specifications) => {
   );
 };
 
+const renderBenefitsList = (benefits) => {
+  if (!Array.isArray(benefits) || !benefits.length) {
+    return null;
+  }
+
+  return (
+    <ul className="item-detail-benefits-list">
+      {benefits.map((benefit, index) => (
+        <li key={`${benefit}-${index}`}>
+          <FaCircleCheck />
+          <span>{benefit}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 const PriceBox = ({ price, oldPrice, discountLabel, taxInfo }) => {
   const computedDiscount =
     oldPrice && oldPrice > price ? `${Math.round(((oldPrice - price) / oldPrice) * 100)}% OFF` : "";
@@ -187,53 +204,6 @@ const QuantitySelector = ({ value, onDecrease, onIncrease }) => {
   );
 };
 
-const DeliveryChecker = ({ value, onChange }) => {
-  const { t } = useLanguage();
-
-  return (
-    <div className="item-delivery-card">
-      <div className="item-delivery-head">
-        <FaLocationDot />
-        <span>{t("details.checkDelivery", "Check delivery availability")}</span>
-      </div>
-      <div className="item-delivery-form">
-        <input
-          type="text"
-          inputMode="numeric"
-          maxLength={6}
-          placeholder={t("details.pincodePlaceholder", "Enter pincode")}
-          value={value}
-          onChange={onChange}
-          aria-label={t("details.pincodePlaceholder", "Enter pincode")}
-        />
-        <button type="button">{t("details.check", "CHECK")}</button>
-      </div>
-    </div>
-  );
-};
-
-const MarketplaceAvailability = ({ marketplaces }) => {
-  const { t } = useLanguage();
-
-  return (
-    <div className="item-marketplace-card">
-      <span className="item-detail-label">{t("details.alsoAvailableOn", "Also Available on:")}</span>
-      <div className="item-marketplace-row">
-        {marketplaces.map((marketplace) => (
-          <span
-            key={marketplace}
-            className={`item-marketplace-badge ${
-              marketplace.toLowerCase().includes("amazon") ? "item-marketplace-amazon" : "item-marketplace-flipkart"
-            }`}
-          >
-            {marketplace}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-};
-
 const AccordionItem = ({ title, icon: Icon, isOpen, onToggle, children }) => (
   <div className="item-accordion-card">
     <button
@@ -310,10 +280,8 @@ const ProductCommercePanel = ({
   onSelectPriceOption,
   onAddToCart,
   quantity,
-  pincode,
   onQuantityDecrease,
   onQuantityIncrease,
-  onPincodeChange,
   wished,
   onToggleWish,
   assuranceText,
@@ -351,14 +319,10 @@ const ProductCommercePanel = ({
 
     <OfferBox text={detail.offerText} />
 
-    <MarketplaceAvailability marketplaces={detail.marketplaces} />
-
     <div className="item-return-card">
       <FaTruckFast />
       <span>{detail.returnPolicy}</span>
     </div>
-
-    <DeliveryChecker value={pincode} onChange={onPincodeChange} />
 
     <div className="item-detail-action-grid">
       <QuantitySelector value={quantity} onDecrease={onQuantityDecrease} onIncrease={onQuantityIncrease} />
@@ -386,29 +350,44 @@ const ProductCommercePanel = ({
       </div>
     </div>
 
-    <div className="item-detail-cta-row">
-      <button
-        type="button"
-        className="auth-submit-btn item-detail-cta item-detail-cta-premium"
-        onClick={() => onAddToCart?.(quantity)}
-      >
-        {t("details.addToCart", "Add to Cart")}
-        <FaArrowRight />
-      </button>
-      <button
-        type="button"
-        className={`item-wishlist-btn ${wished ? "item-wishlist-btn-active" : ""}`}
-        onClick={onToggleWish}
-        aria-label={wished ? t("details.removeFromWishlist", "Remove from wishlist") : t("details.addToWishlist", "Add to wishlist")}
-      >
-        {wished ? <FaHeart /> : <FaRegHeart />}
-      </button>
+    <div className="item-detail-purchase-row">
+      <SafeCheckout />
+      <div className="item-detail-cta-row">
+        <button
+          type="button"
+          className="auth-submit-btn item-detail-cta item-detail-cta-premium"
+          onClick={() => onAddToCart?.(quantity)}
+        >
+          {t("details.addToCart", "Add to Cart")}
+          <FaArrowRight />
+        </button>
+        <button
+          type="button"
+          className={`item-wishlist-btn ${wished ? "item-wishlist-btn-active" : ""}`}
+          onClick={onToggleWish}
+          aria-label={wished ? t("details.removeFromWishlist", "Remove from wishlist") : t("details.addToWishlist", "Add to wishlist")}
+        >
+          {wished ? <FaHeart /> : <FaRegHeart />}
+        </button>
+      </div>
     </div>
   </>
   );
 };
 
-const SimpleDetailPanel = ({ detail, onAddToCart, assuranceText }) => {
+const SimpleDetailPanel = ({
+  detail,
+  onAddToCart,
+  assuranceText,
+  pujaDate,
+  pujaTime,
+  pujaMode,
+  onPujaDateChange,
+  onPujaTimeChange,
+  onPujaModeChange,
+  pujaScheduleMessage,
+  minPujaDate,
+}) => {
   const { t, translateCategory } = useLanguage();
 
   return (
@@ -425,7 +404,46 @@ const SimpleDetailPanel = ({ detail, onAddToCart, assuranceText }) => {
       {detail.oldPrice ? <span>Rs. {formatRupees(detail.oldPrice)}</span> : null}
     </div>
 
+    {detail.benefits.length ? (
+      <div className="item-detail-sidebar-card">
+        <h3>{t("details.pujaBenefits", "Puja Benefits")}</h3>
+        {renderBenefitsList(detail.benefits)}
+      </div>
+    ) : null}
+
     <div className="item-detail-description-wrap">{renderDescription(detail.description)}</div>
+
+    <div className="puja-schedule-card">
+      <h3>{t("details.choosePujaSchedule", "Choose Puja Date & Time")}</h3>
+      <div className="puja-schedule-grid">
+        <label className="auth-field">
+          <span>{t("details.pujaDate", "Puja Date")}</span>
+          <input type="date" value={pujaDate} min={minPujaDate} onChange={onPujaDateChange} />
+        </label>
+        <label className="auth-field">
+          <span>{t("details.pujaTime", "Puja Time")}</span>
+          <input type="time" value={pujaTime} onChange={onPujaTimeChange} />
+        </label>
+      </div>
+      <div className="puja-mode-group" role="radiogroup" aria-label={t("details.pujaMode", "Puja Mode")}>
+        <span className="item-detail-label">{t("details.pujaMode", "Puja Mode")}</span>
+        <div className="puja-mode-options">
+          {["Online", "Offline"].map((mode) => (
+            <label key={mode} className={`puja-mode-option ${pujaMode === mode ? "puja-mode-option-active" : ""}`}>
+              <input
+                type="radio"
+                name="puja-mode"
+                value={mode}
+                checked={pujaMode === mode}
+                onChange={onPujaModeChange}
+              />
+              <span>{t(`details.pujaMode${mode}`, mode)}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+      {pujaScheduleMessage ? <div className="auth-message auth-message-error">{pujaScheduleMessage}</div> : null}
+    </div>
 
     <div className="item-detail-assurance">
       <div className="item-detail-assurance-card">
@@ -434,7 +452,7 @@ const SimpleDetailPanel = ({ detail, onAddToCart, assuranceText }) => {
       </div>
     </div>
 
-    <button type="button" className="auth-submit-btn item-detail-cta" onClick={() => onAddToCart?.(1)}>
+    <button type="button" className="auth-submit-btn item-detail-cta" onClick={onAddToCart}>
       {detail.ctaLabel}
       <FaArrowRight />
     </button>
@@ -446,13 +464,22 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
   const { t } = useLanguage();
   const [activeImage, setActiveImage] = useState("");
   const [quantity, setQuantity] = useState(1);
-  const [pincode, setPincode] = useState("");
   const [wished, setWished] = useState(false);
   const [selectedPriceOption, setSelectedPriceOption] = useState(null);
+  const [pujaDate, setPujaDate] = useState("");
+  const [pujaTime, setPujaTime] = useState("");
+  const [pujaMode, setPujaMode] = useState("Online");
+  const [pujaScheduleMessage, setPujaScheduleMessage] = useState("");
   const [expandedSections, setExpandedSections] = useState({
     description: false,
-    shipping: true,
+    shipping: false,
   });
+
+  const minPujaDate = useMemo(() => {
+    const today = new Date();
+    const timezoneOffset = today.getTimezoneOffset() * 60000;
+    return new Date(today.getTime() - timezoneOffset).toISOString().slice(0, 10);
+  }, []);
 
   const detail = useMemo(() => {
     if (!item) {
@@ -463,6 +490,9 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
     const specifications = Array.isArray(item.specifications) ? item.specifications : [];
     const heightSpec = specifications.find((spec) => String(spec.label || "").toLowerCase() === "height");
     const hasExtraProductDetails = !isPuja && (!!item.description || specifications.length > 0);
+    const isRudraksha =
+      String(item.category || "").toLowerCase().includes("rudraksha") ||
+      String(item.name || item.title || "").toLowerCase().includes("rudraksha");
 
     return {
       title: isPuja ? item.title || item.name : item.name,
@@ -481,17 +511,18 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
       description: buildDescription(item),
       priceRangeLabel: item.priceRangeLabel || "",
       specifications,
+      benefits: Array.isArray(item.benefits) ? item.benefits : [],
       priceOptions: Array.isArray(item.priceOptions) ? item.priceOptions : [],
       reviewsLabel: item.reviewsLabel || "Reviews (0)",
       hasExtraProductDetails,
       taxInfo: item.taxInfo || t("details.taxInfo", "Inclusive of all Taxes. GST included. FREE delivery over Rs. 499"),
       offerText: item.offerText || "",
-      marketplaces: Array.isArray(item.marketplaces) && item.marketplaces.length ? item.marketplaces : ["Flipkart", "Amazon"],
       returnPolicy: item.returnPolicy || t("details.returnPolicy", "Easy 10 Day Return & Replacement Available"),
       highlightLabel: item.highlightLabel || t("details.height", "Height"),
       highlightValue: item.highlightValue || heightSpec?.value || "",
       ctaLabel: ctaLabel || (isPuja ? t("details.bookAndPlaceOrder", "Book & Place Order") : t("details.addToCart", "Add to Cart")),
       isPuja,
+      isRudraksha,
     };
   }, [ctaLabel, item, t]);
 
@@ -501,12 +532,15 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
 
   useEffect(() => {
     setQuantity(1);
-    setPincode("");
     setWished(false);
     setSelectedPriceOption(detail?.priceOptions?.[0] || null);
+    setPujaDate("");
+    setPujaTime("");
+    setPujaMode("Online");
+    setPujaScheduleMessage("");
     setExpandedSections({
       description: false,
-      shipping: true,
+      shipping: false,
     });
   }, [detail?.priceOptions, detail?.title]);
 
@@ -516,10 +550,14 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
 
   const selectedPrice = selectedPriceOption?.price || detail.price;
 
-  const handleAddToCart = (selectedQuantity) => {
+  const handleAddToCart = (selectedQuantityOrBooking) => {
     if (typeof onAddToCart !== "function") {
       return;
     }
+
+    const selectedQuantity = typeof selectedQuantityOrBooking === "number" ? selectedQuantityOrBooking : 1;
+    const bookingDetails =
+      selectedQuantityOrBooking && typeof selectedQuantityOrBooking === "object" ? selectedQuantityOrBooking : null;
 
     const cartItem = selectedPriceOption
       ? {
@@ -528,10 +566,33 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
           selectedWeight: selectedPriceOption.label,
           name: `${item.name} (${selectedPriceOption.label})`,
         }
-      : item;
+      : {
+          ...item,
+          ...(bookingDetails || {}),
+        };
 
     Array.from({ length: Math.max(1, selectedQuantity) }).forEach(() => {
       onAddToCart(cartItem);
+    });
+  };
+
+  const handlePujaScheduleChange = (setter) => (event) => {
+    setter(event.target.value);
+    if (pujaScheduleMessage) {
+      setPujaScheduleMessage("");
+    }
+  };
+
+  const handleBookPuja = () => {
+    if (!pujaDate || !pujaTime) {
+      setPujaScheduleMessage(t("details.pujaScheduleRequired", "Please choose puja date and time before booking."));
+      return;
+    }
+
+    handleAddToCart({
+      pujaDate,
+      pujaTime,
+      pujaMode,
     });
   };
 
@@ -543,10 +604,14 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
   };
 
   return (
-    <>
-      <div className="item-detail-media">
-        <div className="item-detail-image-frame">
-          <img src={activeImage || detail.image} alt={detail.title} className="item-detail-image" />
+      <>
+        <div className={`item-detail-media ${detail.isPuja ? "item-detail-media-puja" : ""}`}>
+        <div className={`product-image-container ${detail.isPuja ? "product-image-container-puja" : ""} ${detail.isRudraksha ? "product-image-container-rudraksha" : ""}`}>
+          <img
+            src={activeImage || detail.image}
+            alt={detail.title}
+            className={`product-image ${detail.isPuja ? "product-image-puja" : ""} ${detail.isRudraksha ? "product-image-rudraksha" : ""}`}
+          />
         </div>
         {detail.badge ? <span className="item-detail-badge">{detail.badge}</span> : null}
         {detail.images.length > 1 ? (
@@ -580,8 +645,16 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
         {detail.isPuja ? (
           <SimpleDetailPanel
             detail={detail}
-            onAddToCart={handleAddToCart}
+            onAddToCart={handleBookPuja}
             assuranceText={assuranceText}
+            pujaDate={pujaDate}
+            pujaTime={pujaTime}
+            pujaMode={pujaMode}
+            onPujaDateChange={handlePujaScheduleChange(setPujaDate)}
+            onPujaTimeChange={handlePujaScheduleChange(setPujaTime)}
+            onPujaModeChange={handlePujaScheduleChange(setPujaMode)}
+            pujaScheduleMessage={pujaScheduleMessage}
+            minPujaDate={minPujaDate}
           />
         ) : (
           <ProductCommercePanel
@@ -591,10 +664,8 @@ const ItemDetailsContent = ({ item, onAddToCart, ctaLabel, assuranceText }) => {
             onSelectPriceOption={setSelectedPriceOption}
             onAddToCart={handleAddToCart}
             quantity={quantity}
-            pincode={pincode}
             onQuantityDecrease={() => setQuantity((current) => Math.max(1, current - 1))}
             onQuantityIncrease={() => setQuantity((current) => current + 1)}
-            onPincodeChange={(event) => setPincode(event.target.value.replace(/\D/g, ""))}
             wished={wished}
             onToggleWish={() => setWished((current) => !current)}
             assuranceText={assuranceText}

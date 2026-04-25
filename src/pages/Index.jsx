@@ -9,19 +9,15 @@ import Footer from '../components/Footer'
 import VideoPage from './VideoPage'
 import PujaSlider from "../components/PujaSlider";
 import AuthModal from "../components/AuthModal";
-import DonationModal from "../components/DonationModal";
 import CartModal from "../components/CartModal";
-import ItemDetailsModal from "../components/ItemDetailsModal";
 import { useProductCatalog } from "../context/ProductCatalogContext";
 
 const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
   const { products } = useProductCatalog();
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [donationModalOpen, setDonationModalOpen] = useState(false);
   const [cartModalOpen, setCartModalOpen] = useState(false);
   const [cartStartInCheckout, setCartStartInCheckout] = useState(false);
   const [shopCategory, setShopCategory] = useState("All");
-  const [selectedItem, setSelectedItem] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -100,42 +96,7 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
       return;
     }
 
-    setSelectedItem(null);
-    setShopCategory(product.category);
-
-    window.requestAnimationFrame(() => {
-      scrollToSection("shop");
-
-      window.setTimeout(() => {
-        setSelectedItem(product);
-      }, 260);
-    });
-  };
-
-  const openOrderFlow = (item) => {
-    if (!item) {
-      return;
-    }
-
-    const normalizedItem =
-      item.kind === "puja"
-        ? {
-            id: `puja-${item.id}`,
-            name: item.title || item.name,
-            category: "Puja Booking",
-            price: item.price,
-            oldPrice: item.oldPrice || null,
-            image: item.image,
-            rating: item.rating || 5,
-            kind: "puja",
-            date: item.date,
-          }
-        : item;
-
-    addToCart?.(normalizedItem);
-    setSelectedItem(null);
-    setCartStartInCheckout(true);
-    setCartModalOpen(true);
+    navigate(`/products/${product.id}`);
   };
 
   const handleOpenCart = () => {
@@ -149,7 +110,7 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
       <Header
         cartCount={cartItems.length}
         onOpenAuth={() => setAuthModalOpen(true)}
-        onOpenDonation={() => setDonationModalOpen(true)}
+        onOpenDonation={() => navigate("/donate")}
         onOpenCart={handleOpenCart}
         onOpenShopCategory={(category) => {
           setCartStartInCheckout(false);
@@ -186,10 +147,6 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
         onClose={() => setAuthModalOpen(false)}
         onSuccess={() => setAuthModalOpen(false)}
       />
-      <DonationModal
-        isOpen={donationModalOpen}
-        onClose={() => setDonationModalOpen(false)}
-      />
       <CartModal
         isOpen={cartModalOpen}
         cartItems={cartItems}
@@ -200,12 +157,6 @@ const Index = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
         onBrowseTempleProducts={browseTempleProducts}
         onRequireAuth={() => setAuthModalOpen(true)}
         defaultCheckoutOpen={cartStartInCheckout}
-      />
-      <ItemDetailsModal
-        isOpen={Boolean(selectedItem)}
-        item={selectedItem}
-        onClose={() => setSelectedItem(null)}
-        onAddToCart={openOrderFlow}
       />
     </div>
   )

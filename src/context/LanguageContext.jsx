@@ -256,6 +256,7 @@ const translations = {
       payRazorpay: "Pay with Razorpay",
       successPlaced: "Order placed successfully.",
       successAccountHint: "Your order has been confirmed. Check My Account for status updates.",
+      orderPlacedPopup: "Item has been ordered. Kindly track it in My Account.",
       errors: {
         fullNameRequired: "Please enter your full name.",
         invalidEmail: "Please enter a valid email address.",
@@ -630,6 +631,7 @@ const translations = {
       payRazorpay: "Razorpay \u0938\u0947 \u092d\u0941\u0917\u0924\u093e\u0928 \u0915\u0930\u0947\u0902",
       successPlaced: "\u0911\u0930\u094d\u0921\u0930 \u0938\u092b\u0932\u0924\u093e\u092a\u0942\u0930\u094d\u0935\u0915 \u0926\u0930\u094d\u091c \u0939\u094b \u0917\u092f\u093e\u0964",
       successAccountHint: "\u0906\u092a\u0915\u093e \u0911\u0930\u094d\u0921\u0930 \u092a\u0941\u0937\u094d\u091f\u093f \u0939\u094b \u0917\u092f\u093e \u0939\u0948\u0964 status updates \u0915\u0947 \u0932\u093f\u090f My Account \u0926\u0947\u0916\u0947\u0902\u0964",
+      orderPlacedPopup: "\u0906\u0907\u091f\u092e \u0911\u0930\u094d\u0921\u0930 \u0939\u094b \u0917\u092f\u093e \u0939\u0948\u0964 \u0915\u0943\u092a\u092f\u093e My Account \u092e\u0947\u0902 \u091c\u093e\u0915\u0930 track \u0915\u0930\u0947\u0902\u0964",
       errors: {
         fullNameRequired: "\u0915\u0943\u092a\u092f\u093e \u0905\u092a\u0928\u093e \u092a\u0942\u0930\u093e \u0928\u093e\u092e \u0926\u0930\u094d\u091c \u0915\u0930\u0947\u0902\u0964",
         invalidEmail: "\u0915\u0943\u092a\u092f\u093e \u0935\u0948\u0927 \u0908\u092e\u0947\u0932 \u092a\u0924\u093e \u0926\u0930\u094d\u091c \u0915\u0930\u0947\u0902\u0964",
