@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { amount } = req.body;
+    const { amount, donationType, donor, notes, receiptPrefix } = req.body || {};
     const amountInSubunits = parseAmountInSubunits(amount);
 
     if (!amountInSubunits || amountInSubunits < 100) {
@@ -39,7 +39,14 @@ export default async function handler(req, res) {
     const order = await razorpay.orders.create({
       amount: amountInSubunits,
       currency: "INR",
-      receipt: `receipt_${Date.now()}`,
+      receipt: `${receiptPrefix || "donation"}_${Date.now()}`,
+      notes: {
+        donationType: donationType || "",
+        donorName: donor?.name || "",
+        donorEmail: donor?.email || "",
+        donorPhone: donor?.phone || "",
+        ...(notes || {}),
+      },
     });
 
     return res.status(200).json({
