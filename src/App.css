@@ -1278,6 +1278,77 @@
   box-shadow: 0 20px 38px rgba(120, 17, 2, 0.28);
 }
 
+.mobile-header-brand {
+  position: fixed;
+  left: 24px;
+  top: 65px;
+  z-index: 1201;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transform: translateY(-50%);
+  min-width: 0;
+  max-width: calc(100vw - 168px);
+}
+
+.mobile-header-brand span {
+  color: #fff8dc;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 2px 10px rgba(127, 29, 29, 0.22);
+}
+
+.mobile-header-actions {
+  position: fixed;
+  right: 18px;
+  top: 65px;
+  z-index: 1201;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.mobile-header-account-btn,
+.mobile-menu-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 248, 220, 0.34);
+  border-radius: 999px;
+  color: #fff8dc;
+  background: rgba(127, 29, 29, 0.18);
+  box-shadow: 0 10px 22px rgba(120, 17, 2, 0.18);
+}
+
+.mobile-header-avatar {
+  flex-basis: 32px;
+  width: 32px;
+  height: 32px;
+  font-size: 11px;
+}
+
+.mobile-nav-drawer {
+  top: 96px;
+  width: 100vw;
+  max-height: calc(100svh - 96px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-bottom-left-radius: 24px;
+  box-shadow: 0 24px 42px rgba(127, 29, 29, 0.24);
+}
+
+.mobile-nav-list {
+  gap: 18px;
+  min-height: 100%;
+  padding: 18px 22px 28px;
+}
+
 .header-lang-btn {
   display: inline-flex;
   align-items: center;
@@ -4304,18 +4375,19 @@
 
 @media (max-width: 780px){
   .landing-hero {
-    height: clamp(540px, 78svh, 680px);
-    min-height: 540px;
+    height: clamp(570px, 82svh, 700px);
+    min-height: 570px;
   }
 
   .landing-hero-title {
-    top: 82px;
+    top: 118px;
+    width: min(92vw, 380px);
   }
 
   .hero-devi-idol {
-    bottom: 8px;
-    width: clamp(330px, 104vw, 500px);
-    height: clamp(310px, 48svh, 430px);
+    bottom: 10px;
+    width: clamp(300px, 98vw, 460px);
+    height: clamp(285px, 43svh, 390px);
   }
 
   .templename{
@@ -4324,19 +4396,42 @@
   }
 }
 @media (max-width: 480px) {
+  .mobile-header-brand {
+    left: 22px;
+    top: 64px;
+    max-width: calc(100vw - 156px);
+  }
+
+  .mobile-header-brand span {
+    font-size: 13px;
+  }
+
+  .mobile-header-actions {
+    right: 14px;
+    top: 64px;
+    gap: 8px;
+  }
+
+  .mobile-header-account-btn,
+  .mobile-menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
   .landing-hero {
-    height: clamp(530px, 76svh, 620px);
-    min-height: 530px;
+    height: clamp(560px, 80svh, 660px);
+    min-height: 560px;
   }
 
   .landing-hero-title {
-    top: 76px;
+    top: 112px;
+    width: min(90vw, 340px);
   }
 
   .hero-devi-idol {
     bottom: 12px;
-    width: clamp(310px, 112vw, 430px);
-    height: clamp(295px, 44svh, 370px);
+    width: clamp(285px, 104vw, 400px);
+    height: clamp(270px, 41svh, 350px);
   }
 
   .topbar {
@@ -4351,8 +4446,8 @@
 
   .templename {
     text-align: center !important;
-    font-size: clamp(1.25rem, 5.8vw, 1.65rem) !important;
-    max-width: 330px;
+    font-size: clamp(1.35rem, 6.2vw, 1.8rem) !important;
+    max-width: 100%;
   }
 }
 

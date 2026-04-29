@@ -425,25 +425,35 @@ const Header = ({ cartCount = 0, onOpenAuth, onOpenDonation, onOpenCart, onOpenS
           </button>
         </div>
 
-        <div className="absolute right-0 md:hidden z-50 text-white">
-          {open ? <CloseIcon onClick={() => setOpen(false)} className="cursor-pointer text-3xl" /> : <MenuIcon onClick={() => setOpen(true)} className="cursor-pointer text-3xl" />}
+        <div className="mobile-header-actions md:hidden">
+          {user ? (
+            <button type="button" className="mobile-header-account-btn" onClick={openAccountPage} aria-label={t("nav.myAccount", "My Account")}>
+              <span className="header-profile-avatar mobile-header-avatar">{profileInitials}</span>
+            </button>
+          ) : !loading ? (
+            <button type="button" className="mobile-header-account-btn" onClick={openLoginPage} aria-label="Login">
+              <FaUserCircle />
+            </button>
+          ) : null}
+          <button type="button" className="mobile-menu-toggle" onClick={() => setOpen((current) => !current)} aria-label={open ? "Close menu" : "Open menu"}>
+            {open ? <CloseIcon className="text-3xl" /> : <MenuIcon className="text-3xl" />}
+          </button>
         </div>
 
-        <div className="absolute left-0 md:hidden flex items-center gap-2">
+        <div className="mobile-header-brand md:hidden">
           <img src={logo} alt="Logo" className="h-9 w-9 rounded-full" />
+          <span>{t("nav.templeName", "Shani Dham Mandir")}</span>
         </div>
       </div>
 
       <nav
-        className={`fixed top-0 right-0 transform transition-transform duration-300 ease-in-out z-40 md:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`mobile-nav-drawer fixed right-0 transform transition-transform duration-300 ease-in-out z-40 md:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
         style={{
-          width: "100vw",
-          top: "107px",
           background:
             "linear-gradient(90deg, rgba(253, 190, 87, 1) 0%, rgba(252, 187, 88, 1) 10%, rgba(244, 119, 40, 1) 40%, rgba(244, 119, 40, 1) 100%)",
         }}
       >
-        <ul className="flex flex-col gap-6 p-8 font-bold h-full">
+        <ul className="mobile-nav-list flex flex-col font-bold">
           <li>
             <button type="button" className="header-lang-btn header-lang-btn-mobile" onClick={toggleLanguage}>
               {t("nav.language", "à¤¹à¤¿à¤‚à¤¦à¥€")}
