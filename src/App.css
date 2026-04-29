@@ -4266,7 +4266,27 @@
   }
 }
 
+.landing-hero {
+  height: clamp(560px, 85vh, 760px);
+  min-height: 560px;
+}
+
+.landing-hero-title {
+  top: clamp(126px, 16vh, 150px);
+  width: min(94vw, 920px);
+}
+
+.templename {
+  max-width: 100%;
+  margin: 0 auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
 .hero-devi-idol {
+  bottom: clamp(0px, 1vh, 24px);
+  width: clamp(420px, 52vw, 680px);
+  height: clamp(330px, 52vh, 470px);
   transform: translateX(-50%);
   animation: deviSlideInCenter 1.5s ease-in-out;
 }
@@ -4283,11 +4303,42 @@
 }
 
 @media (max-width: 780px){
+  .landing-hero {
+    height: clamp(540px, 78svh, 680px);
+    min-height: 540px;
+  }
+
+  .landing-hero-title {
+    top: 82px;
+  }
+
+  .hero-devi-idol {
+    bottom: 8px;
+    width: clamp(330px, 104vw, 500px);
+    height: clamp(310px, 48svh, 430px);
+  }
+
   .templename{
     text-align: center;
+    max-width: 360px;
   }
 }
 @media (max-width: 480px) {
+  .landing-hero {
+    height: clamp(530px, 76svh, 620px);
+    min-height: 530px;
+  }
+
+  .landing-hero-title {
+    top: 76px;
+  }
+
+  .hero-devi-idol {
+    bottom: 12px;
+    width: clamp(310px, 112vw, 430px);
+    height: clamp(295px, 44svh, 370px);
+  }
+
   .topbar {
     height: 35px;
   }
@@ -4300,8 +4351,25 @@
 
   .templename {
     text-align: center !important;
-    font-size: 25px !important;
-    top: 200px !important;
+    font-size: clamp(1.25rem, 5.8vw, 1.65rem) !important;
+    max-width: 330px;
+  }
+}
+
+@media (max-height: 720px) and (min-width: 781px) {
+  .landing-hero {
+    height: 620px;
+    min-height: 620px;
+  }
+
+  .landing-hero-title {
+    top: 126px;
+  }
+
+  .hero-devi-idol {
+    bottom: 6px;
+    width: clamp(420px, 48vw, 620px);
+    height: clamp(310px, 46vh, 370px);
   }
 }
 

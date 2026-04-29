@@ -23,7 +23,7 @@ const LandingPage = ({ id, onFeatureProductClick }) => {
   };
 
   return (
-    <div id={id} className="h-[75vh] md:h-[85vh] w-full relative overflow-hidden bg-[#fcf0d8]">
+    <div id={id} className="landing-hero h-[75vh] md:h-[85vh] w-full relative overflow-hidden bg-[#fcf0d8]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,190,80,0.18),_transparent_55%)]"></div>
       <div
         className="absolute top-[75px] left-0 md:h-[450px] w-[50vw] bg-no-repeat bg-left bg-contain sm:h-[250px] xs:h-[250px] animate-slideInLeft"
@@ -34,11 +34,11 @@ const LandingPage = ({ id, onFeatureProductClick }) => {
         style={{ backgroundImage: `url(${toranRight})` }}
       ></div>
 
-      <div className="absolute top-[105px] left-1/2 -translate-x-1/2 z-40 text-center px-4 md:top-[112px]">
+      <div className="landing-hero-title absolute left-1/2 -translate-x-1/2 z-40 text-center px-4">
         <h3
           className="templename font-extrabold tracking-wide"
           style={{
-            fontSize: "clamp(2rem, 4vw, 3.4rem)",
+            fontSize: "clamp(1.3rem, 4vw, 3.4rem)",
             lineHeight: "1.2",
             background:
               "linear-gradient(90deg, rgba(255,210,120,1) 0%, rgba(252,187,88,1) 25%, rgba(244,119,40,1) 65%, rgba(180,70,15,1) 100%)",
@@ -70,7 +70,7 @@ const LandingPage = ({ id, onFeatureProductClick }) => {
       </div>
 
       <div
-        className="hero-devi-idol absolute bottom-[24px] left-1/2 h-[473px] w-[420px] z-10 sm:bottom-[24px] sm:h-[473px] sm:w-[420px] md:bottom-[-8px] md:h-[610px] md:w-[820px]"
+        className="hero-devi-idol absolute left-1/2 z-10"
         style={{
           backgroundImage: `url(${devi})`,
           backgroundSize: "contain",
